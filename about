@@ -1,0 +1,14 @@
+<?php
+  include('includes/header.php');
+?>  
+    <div id="wrapper">
+      <section>
+       <img src= "img/josh-aharonoff.jpg" alt="Photograph of Josh Aharonoff" class="profile-photo">
+        <h3> About </h3>
+        <p> Hi! I'm Josh Aharonoff. This is my Website where I show all of my projects.</p>
+        <p> If you'd like to follow me on twitter, my username is <a href="http://www.twitter.com/joshaharonoff">@joshaharonoff</a>.</p>
+      </section>
+  	</div>
+<?php 
+  include('includes/footer.php'); 
+?>
