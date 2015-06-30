@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title> Josh Aharonoff | All about him</title>
+   <link rel="stylesheet" href="../css/normalize.css">
+   <link href='http://fonts.googleapis.com/css family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/responsive.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
+ </head>
+  <body>
+    <header>
+      <a href="../index.html" id="logo">
+        <h1> Josh Aharonoff </h1>
+        <h2> Entrepreneur</h2>
+      </a>
+      <nav>
+        <ul>
+          <li> <a href="../index.html"> Portfolio </a> </li>
+          <li> <a href="../about.html"> About </a> </li>
+          <li> <a href="../contact.html"> Contact </a> </li>        
+          <li> <a href="index" class="selected"> Blog </a> </li> 
+        </ul>
+      </nav>
+    </header>
+    <section class='blog'>
+     <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div> <!--Like/share buttons-->  
+      <div class='blog_top'>
+      <p> Jan 1, 1837 </p>
+      <h1> Blog Title: How The Title Affected Everyone Everywhere </h1>
+        <div class= 'featured_image'>
+          <img src='../img/sample_pic.jpg'/>
+        </div>  
+      </div>
+      <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1601008736820409',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+      <div class='blog_body'>
+        <p> text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. text and more text. </p>
+        <!-- <div class='left_blogbox'>
+        </div> -->
+
+        <div class='right_blogbox'> 
+        <img src='../img/rightpicbox.jpg'> 
+        </div> 
+        <p>  and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more text and here comes some more.</p> <!-- ROUGHLY 840 CHARACTER COUNT -->
+        <p> You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again! You didn't think we were done with text did you? Guess again!  </p>
+        <div class='left_blogbox'> 
+        <img src='../img/leftpicbox.jpg'> 
+        </div>
+        <p> yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! yahoo some more text! </p> <!--ROUGHLY 815 CHARACTERS-->
+        <p> Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. Closing remarks...tear tear. </p>
+      </div> 
+      <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div> <!--Like/share buttons-->        
+      <div class='comments'> <!--Change URL for 'data-href'-->
+        <div class="fb-comments" data-href="http://www.joshaharonoff.com/blog/blog-template.html" data-width="100%" data-numposts="10"></div>
+      </div>
+    </section>
+
+     <footer>
+        <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+         
+        <p> &copy; 2015 Josh Aharonoff.</p>
+      </footer>
+     </body> 
+</html>
