@@ -1,0 +1,261 @@
+/*********************************
+GENERAL
+*********************************/
+body{
+  font-family: 'Open Sans', sans-serif
+}
+
+#wrapper{
+  max-width:940px;
+  margin:0 auto;
+   padding: 0 5%
+}
+
+a{
+  text-decoration:none
+}
+
+img {
+  max-width: 100%; /* Always good to use a percentage instead of a fixed amount in order to help make the website responsive*/
+} 
+
+h3{
+  margin:0 0 1em 0;
+}
+
+/*********************************
+HEADING
+*********************************/
+
+header{
+float: left;
+margin:0 0 30px 0;  
+padding: 5px 0 0 0;
+width:100%; 
+height:69px; 
+}
+
+#logo{
+  text-align:center;
+  margin: 0;
+}
+
+h1{
+  font-family:'Change One', sans-serif;
+  margin: 15px 0;
+  font-size: 1.75em;
+  font-weight: normal;
+  line-height: .8em  
+}
+
+h2{
+  font-size:.75em;
+  margin:-5px 0 0 0;
+  font-weight: normal; 
+}
+
+
+/*********************************
+NAVIGATION
+*********************************/
+nav{
+  text-align:center;
+  padding: 10px 0;
+  margin: 20px 0 0;
+}
+
+nav ul{
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+  }
+nav li{
+  display:inline-block; /* puts the items side by side, but keeps the width and height. Block will push things out of the way,
+   Inline will be just text...like an anchor element in a paragraph (which doesn't push anything) */
+}
+
+nav a{
+  font-weight: 800; /*Can be set to normal or bold, or a number*/
+  padding: 15px 10px;
+} 
+/*********************************
+FOOTER
+*********************************/
+footer{
+  font-size: .75em;
+  text-align:center;
+  padding-top:5px;
+  color:#ccc;
+  clear:both; /*since we have a float item below, instead of showing side by side, it will clear both left and right items and appear on the bottom */
+}
+
+.social-icon{
+  width:20px;
+  height:20px;
+  margin: 0 5px;
+}
+
+/*********************************
+PAGE:PORTFOLIO
+*********************************/
+
+#gallery{
+  margin:0;
+  padding:0;
+  list-style:none; /*this will remove any bullet points from a list*/
+}
+
+#gallery li{
+  float:left; /*makes the elements appear side by side, going from left to right */
+  width:18%;
+  margin:2.5%;
+  background-color:#f5f5f5;
+  color:#bdc3c7
+  border-color:black;
+}
+ 
+#gallery li a p{ /*from gallery to list item, to 'a' item(since it starts with a link), to paragraph)*/
+  margin:0;
+  padding:5%;
+  font-size: 0.75em;
+  color: #bdc3c7;
+} 
+/*********************************
+PAGE: ABOUT
+*********************************/
+
+.profile-photo{
+  display:block;
+  max-width:150px;
+  margin:0 auto 30px;
+  border-radius:100%;
+    
+}
+
+/*********************************
+PAGE:CONTACT
+*********************************/
+
+
+.contact-info{
+  list-style:none;
+  margin:0;
+  padding:0;
+    font-size:0.9em;
+}
+
+.contact-info a{
+    display:block; /*means our code will take up space, so it won't sit on top of something*/
+    min-height:20px;
+  background-repeat:no-repeat; /*by default, background images in css will always repeat*/
+  background-size:20px 20px;
+  padding: 0 0 0 30px;
+margin:0 0 10px;
+  
+}
+
+.contact-info li.phone a{ /*takes the phone class inside the list item, and affects the anchor text*/
+  background-image: url('../img/phone.png');/*the 2 dots takes you out of the css directory up 1 directory so you can pull the picture in the right director*/
+}  
+  
+ .contact-info li.mail a{
+   background-image:url('../img/mail.png');
+    
+}
+
+ .contact-info li.twitter a{
+   background-image:url('../img/twitter.png');
+  }
+    
+/*********************************
+COLORS
+*********************************/
+
+/* site body */
+body{
+  background-color:#fff;
+    color:#111;
+}  
+
+/* green header*/
+header {
+  background-image:url('../img/header-background.jpeg');
+  background-position:center top;
+  background-size:cover;
+  overflow:auto;
+  border-color: #599a68;
+} 
+
+/* nav background on mobile */
+nav {
+  /*background:#599a68;*/
+}
+
+/* logo text */
+header h1, h2{
+  color:#fff;
+} 
+
+/*links*/
+a{
+  color: #6ab47b;
+}
+
+/* nav link */
+nav a, nav a:visited {
+   color:#fff;
+   
+}
+
+/* selected nav link */
+nav a.selected, nav a:hover{
+ color:#ADD0B6; 
+}
+
+
+/* nav toolbar design*/
+li{
+  list-style:none;
+  list-style-image:none;
+}
+
+/*********************************
+                BLOG
+*********************************/
+
+.blog{
+ max-width:940px;
+ margin:auto;
+}
+
+.blog_top p .blog_top h1){
+  text-align:center;
+
+}
+
+.blog_top h1{
+  color:blue;
+}
+
+.featured_image{
+  max-width:510px;
+  max-height:310px;
+  margin:3% auto 6% auto;
+  
+}
+
+.left_blogbox{
+   width:28%;
+  float:left;
+  padding-right:16px;
+}
+
+.right_blogbox{
+  width:28%;
+  float:right;
+  padding-left:12px;
+}
+
+.comments{
+  margin-top:10%;
+}
