@@ -10,12 +10,40 @@ header{
 }
 
 header h1, h2{
-  color:#BE6C43;
+  color:#000;
+ 
 }
 
 nav a, nav a:visited {
-   color:#514b48;
+   color:#fff;
    
+}
+
+
+
+
+.blog_top{
+ margin:auto 10px;
+}
+
+.blog_top p .blog_top h1){
+  text-align:center;
+ 
+
+}
+
+/*********************************
+       BLOG PREVIEW (HOMEPAGE)
+*********************************/
+
+.blog_preview{
+  max-width:90%;
+  margin:auto;
+}
+
+.blog_preview img{
+  max-width:90%;
+  margin: 3% 2%;
 }
 
 
@@ -58,10 +86,10 @@ nav a, nav a:visited {
       PAGE: ABOUT
   *********************************/
 
-.profile-photo{
+/*.profile-photo{
   float:left;
   margin:0 5% 80px 0;
-}
+}*/
 
   /*********************************
       PAGE: Blog
@@ -121,23 +149,64 @@ nav a, nav a:visited {
     width:45%     
 }
   
-h1 {
-    font-size: 2.5em;
-      }
+  h1 {
+      font-size: 2.5em;
+}
 
-h2{
-    font-size:.825em;
-    margin-bottom:20px;
-  }
+  h2{
+      font-size:.825em;
+      margin-bottom:20px;
+}
   
   header {
     border-bottom:5px solid #599a68;
     margin-bottom:60px;
-  }
+}
+
+.left_blogbox{
+   width:28%;
+  float:left;
+  padding-right:16px;
+}
+
+.right_blogbox{
+  width:28%;
+  float:right;
+  padding-left:12px;
+}
+
+.blog p{
+      font-size:1em;
+}
+/*********************************
+       BLOG PREVIEW (HOMEPAGE)
+*********************************/
+
+.blog_preview{
+  max-width:710px;
+  margin:auto;
+}
+
+.blog_preview img{
+  max-width:450px;
+  margin: 3% 19%;
+}
+
+/*********************************
+PAGE: ABOUT
+*********************************/
+
+.profile-photo{
+  float:left;
+  display:block;
+  max-width:150px;
+  margin:32px 30px;
+  border-radius:100%;
+
 
 }
 
-
+}
 
 
       

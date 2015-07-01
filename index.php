@@ -1,43 +1,14 @@
 <?php 
   include('includes/header.php'); 
 ?>
-    <div id="wrapper">
-      <section>
-        <ul id="gallery">
-         
-          <li>
-            <a href="img/numbers-01.jpg">
-              <img src="img/numbers-01.jpg" alt="">
-              <p> Experimenatation with color and texture.</p>
-            </a>  
-          </li>
-          <li>
-            <a href="img/numbers-02.jpg">
-              <img src="img/numbers-02.jpg" alt="">
-              <p> Playing with blending modes in Photoshop.</p>
-            </a>  
-          </li>
-          <li>
-            <a href="img/numbers-06.jpg">
-              <img src="img/numbers-06.jpg" alt="">
-              <p> Trying to create an 80's style of glows.</p>
-            </a>  
-          </li>
-          <li>
-            <a href="img/numbers-09.jpg">
-              <img src="img/numbers-09.jpg" alt="">
-              <p> Drips created using Photoshop brushes.</p>
-            </a>  
-          </li>
-             <li>
-            <a href="img/numbers-12.jpg">
-              <img src="img/numbers-12.jpg" alt="">
-              <p> Creating shapes using repitition.</p>
-            </a>  
-          </li>   
-        </ul>
-      </section>
-    </div>
+   <div class='blog_preview'>
+    <a href ='http://www.joshaharonoff.com/blog/what-6-months-running-a-startup-has-taught-me.html'>
+    <img src='img/running-a-startup.jpg'></a>
+    <p> The feedback I got from people from the decision was definitely mixed, but one thing 
+      everyone agreed on was that it would be a very strong learning experience. That could not
+       have been more spot on. Now...6 months later after our launch (1/1/2015), 
+       here is what i've taken away so far...<a href='http://www.joshaharonoff.com/blog/what-6-months-running-a-startup-has-taught-me.html'>Read More </a></p>
+  </div>     
 <?php 
   include('includes/footer.php'); 
 ?>
