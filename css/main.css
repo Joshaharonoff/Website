@@ -293,5 +293,87 @@ li{
   margin: 3% 19%;
 }
 
+.blog_readmore_outer {
+  width:25%;
+  height:58px;
+  margin:25px auto 60px;
+}
 
+
+
+.blog_readmore_outer a{
+  text-decoration:none;
+  color:black;
+
+}
+
+.blog_readmore_inner{
+  border-style:solid;
+  border-width:2px;
+  border-radius:15px;
+  margin:auto;
+  background-color:rgb(44,154,183);
+}
+
+.blog_readmore_inner p{
+    font-size:20px;
+    padding:0% 21%;
+    color:white;
+  }
+
+
+
+/*********************************
+       CODERBYTE (HOMEPAGE)
+*********************************/
+
+.coderbyte_main{
+  max-width:710px;
+  margin:auto;
+}
+
+.coderbyte_links{
+  padding-top:4%;
+}
+
+/*********************************
+       CODERBYTE PROBLEMS
+*********************************/
+
+.coderbyte_example{
+  max-width:710px;
+  margin:auto;
+}
+
+.coderbyte_problem{
+  border-style:solid;
+  margin-bottom:10%;
+}
+
+.coderbyte_problem p{
+  padding: 4px 20px;
+}
+
+.coderbyte_solution{
+  border-style:solid;
+  margin-bottom:3%;
+  background-color: rgb(31,70,97);
+  color: rgb(247,247,247);
+}
+
+.coderbyte_solution p{
+  padding: 10px 31px;
+}
+
+/*.coderbyte_solution ul p{
+  margin-bottom: -11px;
+}*/
+
+.coderbyte_solution li{
+  margin-left:10%;
+}
+
+.coderbyte_analysis{
+  margin-top:10%;
+}
 

@@ -46,6 +46,33 @@ nav a, nav a:visited {
   margin: 3% 2%;
 }
 
+.blog_readmore_outer {
+  width:34%;
+  height:58px;
+  margin:25px auto 60px;
+}
+
+
+
+.blog_readmore_outer a{
+  text-decoration:none;
+  color:black;
+
+}
+
+.blog_readmore_inner{
+  border-style:solid;
+  border-width:1px;
+  border-radius:15px;
+  margin:auto;
+  background-color:rgb(44,154,183);
+}
+
+.blog_readmore_inner p{
+    font-size:15px;
+    padding:0% 16%;
+    color:white;
+  }
 
 
   /*********************************
@@ -191,6 +218,36 @@ nav a, nav a:visited {
   max-width:450px;
   margin: 3% 19%;
 }
+
+
+.blog_readmore_outer {
+  width:25%;
+  height:58px;
+  margin:25px auto 60px;
+}
+
+
+
+.blog_readmore_outer a{
+  text-decoration:none;
+  color:black;
+
+}
+
+.blog_readmore_inner{
+  border-style:solid;
+  border-width:2px;
+  border-radius:15px;
+  margin:auto;
+  background-color:rgb(44,154,183);
+}
+
+.blog_readmore_inner p{
+    font-size:20px;
+    padding:0% 21%;
+    color:white;
+  }
+
 
 /*********************************
 PAGE: ABOUT
