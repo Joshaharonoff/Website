@@ -2,6 +2,8 @@
   include('includes/header.php'); 
 ?>
    <div class='blog_preview'>
+     <p> Jul 1, 2015 </p>
+     <h1> What 6 Months Running a Startup Has Taught Me </h1>
     <a href ='http://www.joshaharonoff.com/blog/what-6-months-running-a-startup-has-taught-me.html'>
     <img src='img/running-a-startup.jpg'></a>
     <p> The feedback I got from people from the decision was definitely mixed, but one thing 
