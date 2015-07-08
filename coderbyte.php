@@ -8,7 +8,10 @@
       	I love riddles, and Javascript riddles are like riddles on steroids. <a href='http://joshaharonoff.com/contact'>
       	Feel free to get in touch with me</a>!</p>
         <div class= 'coderbyte_links'>
+          
           <p><a href='http://joshaharonoff.com/coderbyte/first-reverse.html'>First Reverse</p>
+          <p><a href='http://joshaharonoff.com/coderbyte/first-factorial.html'>First Factorial</a></p>
+          <p><a href='http://joshaharonoff.com/coderbyte/simple-adding.html'>Simple Adding</a></p>
           <p><a href='http://joshaharonoff.com/coderbyte/check-nums.html'>Check Nums</a></p>
 
         </div>

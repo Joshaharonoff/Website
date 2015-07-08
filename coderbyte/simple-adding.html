@@ -2,7 +2,7 @@
 <html>
  <head>
    <meta charset="utf-8">
-   <title> Josh Aharonoff | Check Nums</title>
+   <title> Josh Aharonoff | Simple Adding</title>
    <head profile="http://www.w3.org/2005/10/profile">
    <link rel="icon" 
       type="image/png" 
@@ -32,24 +32,20 @@
      <div class='coderbyte_example'>
         <h3>THE PROBLEM</h3>
           <div class= 'coderbyte_problem'> 
-              <p>Sample Problem Here </p> <!-- TYPE CODER BYTE PROBLEM HERE -->
+              <p>Have the function SimpleAdding(num) add up all the numbers from 1 to num. For the test cases, the parameter num will be any number from 1 to 1000.  </p>
               <p>Use the Parameter Testing feature in the box below to test your code with different arguments.</p>
-              <p><a href='Coder Byte Link'> Check the problem here </a></p> <!-- TYPE LINK TO PROBLEM HERE -->
+              <p><a href='http://coderbyte.com/CodingArea/Language.php?ct=Simple%20Adding'> Check the problem here </a></p> 
           </div>
      <h3>MY SOLUTION</h3>
      <div class= 'coderbyte_solution'>
             <ul>
-              <p><span style='color:rgb(255,0,255)'>function</span> CheckNums(num1,num2) { </p>
-                  <li><span style='color:rgb(255,0,255)'>if</span> (<span style='color:rgb(123,216,39)'>num2</span>><span style='color:rgb(123,216,39)'>num1</span>){</li>
-                  <li><span style='color:rgb(255,0,255)'>return</span> <span style='color:rgb(244,194,11)'>true </span></li>
-                  <li>}</li>
-                  <li><span style='color:rgb(255,0,255)'>else if</span> (<span style='color:rgb(123,216,39)'>num1</span>><span style='color:rgb(123,216,39)'>num2</span>){</li>
-                  <li><span style='color:rgb(255,0,255)'>return </span><span style='color:rgb(244,194,11)'>false</span></li>
-                  <li>}</li>
-                  <li><span style='color:rgb(255,0,255)'>else if</span> (<span style='color:rgb(123,216,39)'>num1</span>===<span style='color:rgb(123,216,39)'>num2</span>){</li>
-                  <li><span style='color:rgb(255,0,255)'>return </span>-1</li>
-                  <li>}</li>          
-                <p>}</p>
+              <p><span style='color:rgb(255,0,255)'>function</span> SimpleAdding(num) { </p>
+                <li><span style='color:rgb(255,0,255)'>var</span> result=0;</li>
+                <li><span style='color:rgb(255,0,255)'>for</span>(i=0; i <= num; i++){</li>
+                <li>result += i</li>
+                <li>}</li>
+                <li><span style='color:rgb(255,0,255)'>return </span> result</li>
+                <p>}</p>                  
             </ul>      
       </div>
       <h3>MY ANALYSIS</h3>
