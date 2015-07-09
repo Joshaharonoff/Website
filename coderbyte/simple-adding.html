@@ -41,7 +41,7 @@
             <ul>
               <p><span style='color:rgb(255,0,255)'>function</span> SimpleAdding(num) { </p>
                 <li><span style='color:rgb(255,0,255)'>var</span> result=0;</li>
-                <li><span style='color:rgb(255,0,255)'>for</span>(i=0; i <= num; i++){</li>
+                <li><span style='color:rgb(255,0,255)'> for</span> (i=0; i <= num; i++){</li>
                 <li>result += i</li>
                 <li>}</li>
                 <li><span style='color:rgb(255,0,255)'>return </span> result</li>
@@ -49,8 +49,36 @@
             </ul>      
       </div>
       <h3>MY ANALYSIS</h3>
-             <p>This problem is actually the easiest of the easiests in my opinion. It utilizes 1 function - "if".</p>
-             <p>We have 3 arguements here. Let's analyze each one:</p>     
+             <p>This is one of the easier of the easy coderbyte problems. It allows us to utilize the ‘+=’ operator to return our result. Let’s analyze it together:</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'>var</span> result=0;</li>
+                </ul>
+              </div>  
+              <p>Like most coderbyte problems, we start off by creating a new variable and leaving it blank, eventually tying it to our result.</p>
+                <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'> for</span> (i=0; i <= num; i++){</li>
+                </ul>
+              </div> 
+              <p>We then set up a for loop, where we start with 1, and go all the way up to the number we type in the “num” field.
+               Notice the “i <= num”. Alternatively, we could have written “i < num+1”, and gotten to the same result.</p>
+               <div class= 'coderbyte_solution'>
+                <ul>
+                   <li>result += i</li>
+                </ul>
+              </div>
+              <p>Here we are telling our new variable “result” to add ‘i’ to it’s value, and update it’s value each time. 
+                This is like saying "result = result+i"</p>
+                <div class= 'coderbyte_solution'>
+                <ul>
+                   <li>}</li>
+                  <li><span style='color:rgb(255,0,255)'>return </span> result</li>
+                </ul>
+              </div>
+                <p>Presto! We’re all set :)</p>
+                <p>It's worth mentioning that we intentionally put our <span style='color:rgb(255,0,255)'>return </span> function outside of our for loop. This way, we return the final result once it is finished with all of the sumation, rather than returning the result each time as it gets another number added to it.</p>
+
     <footer>
         <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
         <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
