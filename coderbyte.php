@@ -12,7 +12,9 @@
           <p><a href='http://joshaharonoff.com/coderbyte/first-reverse.html'>First Reverse</p>
           <p><a href='http://joshaharonoff.com/coderbyte/first-factorial.html'>First Factorial</a></p>
           <p><a href='http://joshaharonoff.com/coderbyte/simple-adding.html'>Simple Adding</a></p>
+          <p><a href='http://joshaharonoff.com/coderbyte/letter-capitalize.html'>Letter Capitalize</a></p>
           <p><a href='http://joshaharonoff.com/coderbyte/check-nums.html'>Check Nums</a></p>
+          <p><a href='http://joshaharonoff.com/coderbyte/alphabet-soup.html'>Alphabet Soup</a></p>
 
         </div>
     </div>  

@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title> Josh Aharonoff | Letter Capitalize</title>
+   <head profile="http://www.w3.org/2005/10/profile">
+   <link rel="icon" 
+      type="image/png" 
+      href="../img/favicon.ico">
+   <link rel="stylesheet" href="../css/normalize.css">
+   <link href='http://fonts.googleapis.com/css family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/responsive.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
+ </head>
+  <body>
+    <header>
+      <a href="../index" id="logo">
+        <h1> Josh Aharonoff </h1>
+        <h2> </h2>        
+      </a>
+      <nav>
+        <ul>
+          <li> <a href="../portfolio"> Portfolio </a> </li>
+          <li> <a href="../about"> About </a> </li>
+          <li> <a href="../coderbyte.php"> Coderbyte </a> </li> 
+          <li> <a href="../contact"> Contact </a> </li>        
+          <li> <a href="../"> Blog </a> </li> 
+        </ul> 
+      </nav>
+    </header>
+     <div class='coderbyte_example'>
+        <h3>THE PROBLEM</h3>
+          <div class= 'coderbyte_problem'> 
+              <p>Have the function LetterCapitalize(str) take the str parameter being passed and capitalize the first letter of each word. Words will be separated by only one space.  </p> 
+              <p>Use the Parameter Testing feature in the box below to test your code with different arguments.</p>
+              <p><a href='http://coderbyte.com/CodingArea/Language.php?ct=Letter%20Capitalize'> Check the problem here </a></p> 
+          </div>
+     <h3>MY SOLUTION</h3>
+     <div class= 'coderbyte_solution'>
+            <ul>
+              <p><span style='color:rgb(255,0,255)'>function</span> LetterCapitalize(str) { </p>
+                  <li><span style='color:rgb(255,0,255)'>return</span><span style='color:rgb(123,216,39)'> str</span>.replace(/\b[a-z]/g,<span style='color:rgb(255,0,255)'>function</span> (str){ </li>
+                  <li><span style='color:rgb(255,0,255)'>return</span><span style='color:rgb(123,216,39)'> str</span>.toUpperCase()</li>
+                  <li>});</li>                    
+                <p>}</p>
+            </ul>      
+      </div>
+      <h3>MY ANALYSIS</h3>
+             <p>Ok, before we jump into this, you will probably notice some funky letters in the solution. This is not your simple for loop or array...here we are using regular expressions, and they are super helpful in Javascript. Be sure to get these downpat by reading up on them <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions'>over here</a>:</p>
+             <p>Now that we got that out of the way, let’s dive into this, step by step:</p> 
+             <p>Here we’re running a replace function, which essentially will do just that - take away what we don’t want, and replace it with what we do want. We have 2 values to put in with the replace function, the first being the item we want to replace, the second being the item we are replacing it with.</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'>return</span><span style='color:rgb(123,216,39)'> str</span>.replace(</li>
+                </ul>
+              </div>   
+              <p>Regular expressions are always surrounded by a forward slash, like this /insert regular expression/. We’ll get into what the g means in a moment</p> 
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>/\b[a-z]/g</li>
+                </ul>
+              </div>  
+              <p>\b matches what’s known as a word boundary. Essentially what this is saying is anything that is not preceded by another letter should be affected. This will allow us to affect the first letter of each word.</p>
+               <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>\b</li>
+                </ul>
+              </div>  
+              <p>Usually, brackets are used to denote arrays. In the case of Regular Expressions however, any letters inside the brackets will be affected. In this example, we use a - in order to denote all the letters in between a and z. Alternatively we could have written [abcdefghijklmnopqrstuvwxyz]. I think [a-z] is much cleaner :)</p>
+               <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>[a-z]</li>
+                </ul>
+              </div>  
+              <p>Last but not least, we have our ‘g’, or Global Search flag. This tells our code to run through our entire string, rather than just stopping at our first instance of a letter found without another letter preceding it.</p>
+               <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>/g</li>
+                </ul>
+              </div> 
+              <p>Put all together, the first part of our replace function says: Searching through the entire string (‘/g’), any letters that are not preceded by another letter, or in other words the first letter(\b), only in the event that the text is a letter and not a special character([a-z]), should be replaced by what’s after the comma. Now let’s jump into the next part of our replace function.</p>
+              <p>Here we have included function as our replace value, rather than just a new string. The function essentially is telling us to take any value that we are trying to replace, and capitalize it using our .toUpperCase() function.</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'>function</span> (str){ </li>
+                  <li><span style='color:rgb(255,0,255)'>return</span><span style='color:rgb(123,216,39)'> str</span>.toUpperCase()</li>
+                  <li>});</li> 
+                </ul>
+              </div> 
+              <p>Ok...we’ve covered a lot. We went over the .replace() function, regular expressions, and the .toUpperCase() function. Grab a drink of water, wipe the sweat off your face, and give yourself a pat on the back - you just solved it!</p>
+    <footer>
+        <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
+        <p> &copy; 2015 Josh Aharonoff.</p>
+    </footer>     
+  </body> 
+</html>          

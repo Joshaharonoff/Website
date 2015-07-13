@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title> Josh Aharonoff | Check Nums</title>
+   <head profile="http://www.w3.org/2005/10/profile">
+   <link rel="icon" 
+      type="image/png" 
+      href="../img/favicon.ico">
+   <link rel="stylesheet" href="../css/normalize.css">
+   <link href='http://fonts.googleapis.com/css family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/responsive.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
+ </head>
+  <body>
+    <header>
+      <a href="../index" id="logo">
+        <h1> Josh Aharonoff </h1>
+        <h2> </h2>        
+      </a>
+      <nav>
+        <ul>
+          <li> <a href="../portfolio"> Portfolio </a> </li>
+          <li> <a href="../about"> About </a> </li>
+          <li> <a href="../coderbyte.php"> Coderbyte </a> </li> 
+          <li> <a href="../contact"> Contact </a> </li>        
+          <li> <a href="../"> Blog </a> </li> 
+        </ul> 
+      </nav>
+    </header>
+     <div class='coderbyte_example'>
+        <h3>THE PROBLEM</h3>
+          <div class= 'coderbyte_problem'> 
+              <p>Have the function AlphabetSoup(str) take the str string parameter being passed and return the string with the letters in alphabetical order (ie. hello becomes ehllo). Assume numbers and punctuation symbols will not be included in the string.  </p> 
+              <p>Use the Parameter Testing feature in the box below to test your code with different arguments.</p>
+              <p><a href='http://coderbyte.com/CodingArea/Language.php?ct=Alphabet%20Soup'> Check the problem here </a></p>
+          </div>
+     <h3>MY SOLUTION</h3>
+     <div class= 'coderbyte_solution'>
+            <ul>
+              <p><span style='color:rgb(255,0,255)'>function</span>  AlphabetSoup(str) {  </p>
+                  <li><span style='color:rgb(255,0,255)'>return</span> <span style='color:rgb(123,216,39)'>str.</span>split('').sort().join('')
+                <p>}</p>
+            </ul>      
+      </div>
+      <h3>MY ANALYSIS</h3>
+             <p>This problem may appear to be challenging, but is actually rather quite simple. Luckily, we have the .sort() function, which sorts values in an array. Since this item is in a string, we’ll need to convert it to an array before sorting it, and then convert it back to a string once we are finished.</p>
+             <p>We start off by taking the string and ‘splitting' it into an array, so that each letter gets separated by quotations</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'>return</span> <span style='color:rgb(123,216,39)'>str.</span>split('')</li>
+                </ul>
+              </div>
+              <p>Next, we utilize the sort function. In this case, since we’re dealing with letters, we can use the sort function alone like this: .sort(). However, if we were trying to sort an array with numbers, some of them being greater than single digit numbers, we would need to use .sort(function(a,b){return a-b}), as the sort function converts numbers to strings and sorts them in unicode order. Don’t worry about that for now, but you can read up on how the sort function works <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'> over here</a>. </p> 
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>.sort()</li>
+                </ul>
+              </div>
+              <p> Now that we have our array sorted to our liking, it’s time to convert it back to a string!</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>.join('')</li>
+                </ul>
+              </div>
+              <p>Presto! Our array is converted back to a string, with the letters not separated by anything. Not too shabby!</p>
+
+    <footer>
+        <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
+        <p> &copy; 2015 Josh Aharonoff.</p>
+    </footer>     
+  </body> 
+</html>          
