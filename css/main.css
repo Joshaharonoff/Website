@@ -377,3 +377,21 @@ li{
   margin-top:10%;
 }
 
+/*********************************
+Why Learing To Code Has Changed My Life
+*********************************/
+
+.learn-to-code-table{
+  border-style:solid;
+  width:100%;
+}
+
+.learn-to-code-table td{
+  width:1%;
+  border-style:groove ;
+  text-align:center;
+}
+
+.show-ul li{
+  list-style:initial;
+}

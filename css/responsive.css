@@ -73,7 +73,9 @@ nav a, nav a:visited {
     padding:0% 16%;
     color:white;
   }
-
+.show-ul li{
+  font-size:.7em;
+}
 
   /*********************************
       TWO COLUMN LAYOUT
@@ -141,6 +143,10 @@ nav a, nav a:visited {
   float:none;
   padding-left:12px;
   padding-right:12px;
+}
+
+.learn-to-code-table td{
+ font-size:.7em;
 }
 
 }
@@ -261,6 +267,15 @@ PAGE: ABOUT
   border-radius:100%;
 
 
+}
+
+.learn-to-code-table td{
+ font-size:1em;
+}
+
+
+.show-ul li{
+  font-size:1em;
 }
 
 }
