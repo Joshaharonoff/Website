@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title> Josh Aharonoff | Vowel Count</title>
+   <head profile="http://www.w3.org/2005/10/profile">
+   <link rel="icon" 
+      type="image/png" 
+      href="../img/favicon.ico">
+   <link rel="stylesheet" href="../css/normalize.css">
+   <link href='http://fonts.googleapis.com/css family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/responsive.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
+ </head>
+  <body>
+   <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1601008736820409";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      
+    <header>
+      <a href="../index" id="logo">
+        <h1> Josh Aharonoff </h1>
+        <h2> </h2>        
+      </a>
+      <nav>
+        <ul>
+          <li> <a href="../portfolio"> Portfolio </a> </li>
+          <li> <a href="../about"> About </a> </li>
+          <li> <a href="../coderbyte.php"> Coderbyte </a> </li> 
+          <li> <a href="../contact"> Contact </a> </li>        
+          <li> <a href="../"> Blog </a> </li> 
+        </ul> 
+      </nav>
+    </header>
+     <div class='coderbyte_example'>
+        <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/vowel-count.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        <h3>THE PROBLEM</h3>
+          <div class= 'coderbyte_problem'> 
+              <p>Have the function VowelCount(str) take the str string parameter being passed and return the number of vowels the string contains (ie. "All cows eat grass" would return 5). Do not count y as a vowel for this challenge.  </p>
+              <p>Use the Parameter Testing feature in the box below to test your code with different arguments.</p>
+              <p><a href='http://coderbyte.com/CodingArea/Language.php?ct=Vowel%20Count'> Check the problem here </a></p> 
+          </div>
+     <h3>MY SOLUTION</h3>
+      <p>Best solution:</p>
+     <div class= 'coderbyte_solution'>
+          
+            <ul>
+              <p><span style='color:rgb(255,0,255)'>function</span> VowelCount(str) { </p>
+                  <li>&nbsp <span style='color:rgb(255,0,255)'>return</span> (<span style='color:rgb(123,216,39)'>str</span>.match( /[aeiou]/g ).length;                        
+                <p>}</p>
+           </ul>      
+      </div>
+    
+      <h3>MY ANALYSIS</h3>
+             <p>Before i learned about Regex, i did this problem a different way (see alternative solution below)</p>
+             <p>I created 2 for loops, where we would take the first character in the first array (which was all vowels), and run through each letter of the string that we input to see if any of the characters matched that first vowel. If so, we would add a value to a new variable, which we named ‘result’. </p>
+               <p>Alternative Solution</p>
+       <div class= 'coderbyte_solution'>
+          
+            <ul>
+              <p><span style='color:rgb(255,0,255)'>function</span> VowelCount(str) { </p>
+                  <li><span style='color:rgb(255,0,255)'>var</span> vowels = [<span style='color:rgb(240,128,71)'> 'a','e','i','o','u' </span>];</li>
+                  <li>&nbsp &nbsp<span style='color:rgb(255,0,255)'>var</span> result = 0;</li>
+                  <li><span style='color:rgb(255,0,255)'>for</span> ( i=0; i <<span style='color:rgb(123,216,39)'> str</span>.length; i++){</li>
+                  <li>&nbsp &nbsp<span style='color:rgb(255,0,255)'>for</span> ( j=0; j<<span style='color:rgb(123,216,39)'> vowel</span>.length; j++){</li>
+                  <li>&nbsp &nbsp<span style='color:rgb(255,0,255)'>if</span>(<span style='color:rgb(123,216,39)'> str</span> [i] ===<span style='color:rgb(123,216,39)'> vowels </span> [j] )</li>
+                  <li>&nbsp &nbsp<span style='color:rgb(123,216,39)'>result</span> += 1</li>
+                  <li>&nbsp }</li>
+                  <li>}</li>
+                  <li><span style='color:rgb(255,0,255)'>return</span> result</li>
+                <p>}</p>
+           </ul>      
+      </div>
+      <p>Seems like a lot of work no? Let’s go over our original version, which is a much simpler version using regex:</p>
+      <p>We start by using a Match function, where only the values that we input that match the string will returned:</p>
+
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>&nbsp <span style='color:rgb(255,0,255)'>return</span> (<span style='color:rgb(123,216,39)'>str</span>.match(</li>
+                </ul>
+              </div>  
+      <p>We then input the values that we want to match, using regex. These values need to be surrounded by dashes /like this/. Note that we also added the global search flag (/g), which will be sure to continue searching the entire string, rather than just stopping at the first match
+      (/[aeiou]/g)</p>   
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>&nbsp /[aeiou]/g)</li>
+                </ul>
+              </div>  
+      <p>Finally, to get the number we are looking for, all we need to do is get the length of this new array that we created, which shows the results of all of the values we matched</p> 
+       <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>&nbsp .length</li>
+                </ul>
+        </div>
+        <p>Ahh...much simpler this way :)</p> 
+        <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/vowel-count.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        <div class="fb-comments" data-href="http://joshaharonoff.com/coderbyte/vowel-count.html" data-width="100%" data-numposts="10"></div>         
+    <footer>
+        <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
+        <p> &copy; 2015 Josh Aharonoff.</p>
+    </footer>     
+  </body> 
+</html>          

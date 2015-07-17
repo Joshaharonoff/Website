@@ -14,6 +14,13 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
  </head>
   <body>
+     <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1601008736820409";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
     <header>
       <a href="../index" id="logo">
         <h1> Josh Aharonoff </h1>
@@ -30,6 +37,7 @@
       </nav>
     </header>
      <div class='coderbyte_example'>
+      <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/first-reverse.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
         <h3>THE PROBLEM</h3>
           <div class= 'coderbyte_problem'> 
               <p>Using the JavaScript language, have the function FirstReverse(str) take the str parameter being passed and return the string in reversed order. </p>
@@ -56,32 +64,34 @@
               <li>- Switch between a string and an array</li>
              </ul>
              <p>In the example I used above, I used a for loop. Let's analyze it together:</p>
+             <p>I first set up a new variable, "result", where I will be recording the final answer.</p>
               <div class= 'coderbyte_solution'>
                 <ul>
                   <li>   <span style='color:rgb(255,102,0)'>var</span> result='';</li>
                 </ul>
              </div>       
-            <p>I first set up a new variable, "result", where I will be recording the final answer.</p>
+            <p>I then set up a for loop, starting from the last letter in the string, and ending with the first letter. </p> 
               <div class= 'coderbyte_solution'>
                 <ul>
                   <li>   <span style='color:rgb(255,102,0)'>for</span>(i =str.<span style='color:rgb(64,160,112)'>length</span>-1; i >= 0; i--){</li>
                 </ul>
              </div>
-             <p>I then set up a for loop, starting from the last letter in the string, and ending with the first letter. </p> 
+             <p>Finally, I code it so that each letter in the string (str[i]) is being added to the final result.</p>
              <div class= 'coderbyte_solution'>
                 <ul>
                      <li>result+=str[i]</li>
                 </ul>
              </div> 
-             <p>Finally, I code it so that each letter in the string (str[i]) is being added to the final result.</p>
+             <p>and we're done!</p>
              <div class= 'coderbyte_solution'>
                 <ul>
                   <p>    <span style='color:rgb(255,102,0)'>return </span>result; </p>
                 </ul>
              </div>  
-             <p>and we're done!</p>
+             
              &nbsp
              <p>Let’s try it now using a different way, this time converting it to an array, reversing the array with the .reverse() function, and then converting it back to a string:</p>
+             <p>Looks much simpler no? Let's analyze what we did:</p>
              <div class= 'coderbyte_solution'>
                 <ul>
                      <p>function FirstReverse(str) { </p>
@@ -89,32 +99,32 @@
                      <p>}</p>
                 </ul>
              </div> 
-             <p>Looks much simpler no? Let's analyze what we did:</p>
+             <p>This tells our function to return the following: whatever letters we put inside the parenthesis of our function, converted to an array, and separated by a ‘’ for each letter. If we input “hello”, at this point it should be converted to[ 'h', 'e', 'l', 'l', 'o' ]</p>
               <div class= 'coderbyte_solution'>
                 <ul>
                      <li><span style='color:rgb(255,102,0)'>return</span> str.split('')</li>
                 </ul>
              </div> 
-             <p>This tells our function to return the following: whatever letters we put inside the parenthesis of our function, converted to an array, and separated by a ‘’ for each letter. If we input “hello”, at this point it should be converted to[ 'h', 'e', 'l', 'l', 'o' ]
-            </p>
+             <p>This will then reverse the array, so that it now reads [ 'o', 'l', 'l', 'e', 'h' ]</p>
             <div class= 'coderbyte_solution'>
                 <ul>
                      <li>.reverse()</li>
                 </ul>
              </div>
-             <p>This will then reverse the array, so that it now reads [ 'o', 'l', 'l', 'e', 'h' ]</p>
+             <p>Finally, this tells our function to convert these items back to a string, and separate the letters with nothing.</p>
               <div class= 'coderbyte_solution'>
                 <ul>
                      <li>.join('')</li>
                 </ul>
              </div>
-             <p>Finally, this tells our function to convert these items back to a string, and separate the letters with nothing.</p>
+             <p>Great work! A very basic but important set of actions to become familiar with in Javascript. </p>
               <div class= 'coderbyte_solution'>
                 <ul>
                      <li>'olleh'</li>
                 </ul>
              </div>
-             <p>Great work! A very basic but important set of actions to become familiar with in Javascript. </p>
+              <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/first-reverse.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+              <div class="fb-comments" data-href="http://joshaharonoff.com/coderbyte/first-reverse.html" data-width="100%" data-numposts="10"></div>    
 
     <footer>
         <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>

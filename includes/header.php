@@ -2,7 +2,7 @@
 <html>
  <head>
    <meta charset="utf-8">
-   <title> Josh Aharonoff | </title>
+   <title> Josh Aharonoff</title>
    <head profile="http://www.w3.org/2005/10/profile">
    <link rel="icon" 
       type="image/png" 

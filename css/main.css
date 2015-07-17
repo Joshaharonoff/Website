@@ -106,12 +106,16 @@ PAGE:PORTFOLIO
   list-style:none; /*this will remove any bullet points from a list*/
 }
 
+#gallery a{
+  text-decoration:none;
+}
+
 #gallery li{
   float:left; /*makes the elements appear side by side, going from left to right */
   width:18%;
   margin:2.5%;
-  background-color:#f5f5f5;
-  color:#bdc3c7
+  background-color:rgb(229,229,229);
+  color:#bdc3c7;
   border-color:black;
 }
  
@@ -119,7 +123,7 @@ PAGE:PORTFOLIO
   margin:0;
   padding:5%;
   font-size: 0.75em;
-  color: #bdc3c7;
+  color: rgb(34,34,34);
 } 
 /*********************************
 PAGE: ABOUT
@@ -343,6 +347,11 @@ li{
 .coderbyte_example{
   max-width:710px;
   margin:auto;
+
+}
+
+.coderbyte_example h3{
+  margin-top:30px;
 }
 
 .coderbyte_problem{
@@ -376,6 +385,8 @@ li{
 .coderbyte_analysis{
   margin-top:10%;
 }
+
+
 
 /*********************************
 Why Learing To Code Has Changed My Life

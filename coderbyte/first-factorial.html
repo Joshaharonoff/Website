@@ -14,6 +14,14 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
  </head>
   <body>
+ 
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1601008736820409";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <header>
       <a href="../index" id="logo">
         <h1> Josh Aharonoff </h1>
@@ -30,6 +38,7 @@
       </nav>
     </header>
      <div class='coderbyte_example'>
+       <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/simple-adding.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
         <h3>THE PROBLEM</h3>
           <div class= 'coderbyte_problem'> 
               <p>Have the function FirstFactorial(num) take the num parameter being passed and return the factorial of it (ie. if num = 4, return(4 * 3 * 2 * 1)). For the test cases, the range will be between 1 and 18.  </p> 
@@ -53,25 +62,26 @@
       <h3>MY ANALYSIS</h3>
              <p>There are a number of ways one can do this. I chose to utilize the .reduce() function, which keeps things nice 
               and neat in a problem like this. Let’s go over it:</p>
+              <p>Like most Javascript problems, I first set up a new variable which will be tied to our answer </p>
               <div class= 'coderbyte_solution'>
                 <ul>
                   <p><span style='color:rgb(255,102,0)'>var </span>numberArray=[];</p>
                 </ul>      
               </div>
-                <p>Like most Javascript problems, I first set up a new variable which will be tied to our answer </p>
+               <p>Here we set up a for loop, starting with the number 1, and going all the way up until the number itself.</p>  
               <div class= 'coderbyte_solution'>
                 <ul>
                   <li>for(i=1; i <= num; i++){ </li>
                 </ul>      
               </div>
-              <p>Here we set up a for loop, starting with the number 1, and going all the way up until the number itself.</p>
+             <p>We then push each of those numbers to our new array</p>
               <div class= 'coderbyte_solution'>
                 <ul>
                   <li>numberArray.push(i) </li>
                   <li>}</li>
                 </ul>      
               </div>
-              <p>We then push each of those numbers to our new array</p>
+               <p>Here’s where we spice things up a bit with the .reduce() function. I haven’t wrapped my head on exactly how the .reduce() function works, but my understanding is that it allows you to flatten an array into 1 variable, and determine how that variable will be computed. In this case, we chose to take each variable in the array, and multiply it by itself by the line “return a*b”.</p>
                <div class= 'coderbyte_solution'>
                 <ul>
                   <li>return numberArray.reduce (function(a,b){</li>
@@ -79,8 +89,10 @@
                   <li>  });</li>
                 </ul>      
               </div>
-              <p>Here’s where we spice things up a bit with the .reduce() function. I haven’t wrapped my head on exactly how the .reduce() function works, but my understanding is that it allows you to flatten an array into 1 variable, and determine how that variable will be computed. In this case, we chose to take each variable in the array, and multiply it by itself by the line “return a*b”.</p>
+             
               <p>Alternatively, we could have ran a 2nd for loop that ran through the newly created array, and multiplied each number by itself. Try it out - see if you can solve it this way too :)</p>
+              <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/first-factorial.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+              <div class="fb-comments" data-href="http://joshaharonoff.com/coderbyte/first-factorial.html" data-width="100%" data-numposts="10"></div>
     <footer>
         <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
         <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     

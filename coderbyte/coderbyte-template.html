@@ -14,6 +14,15 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
  </head>
   <body>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1601008736820409";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      
     <header>
       <a href="../index" id="logo">
         <h1> Josh Aharonoff </h1>
@@ -30,6 +39,7 @@
       </nav>
     </header>
      <div class='coderbyte_example'>
+        <div class="fb-like" data-href="TYPE LINK HERE" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
         <h3>THE PROBLEM</h3>
           <div class= 'coderbyte_problem'> 
               <p>Sample Problem Here </p> <!-- TYPE CODER BYTE PROBLEM HERE -->
@@ -59,7 +69,9 @@
                 <ul>
                   <li><span style='color:rgb(255,0,255)'>var</span> result=0;</li>
                 </ul>
-              </div>     
+              </div> 
+              <div class="fb-like" data-href="INSERT LINK HERE" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+              <div class="fb-comments" data-href="INSERT LINK HERE" data-width="100%" data-numposts="10"></div>    
     <footer>
         <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
         <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
