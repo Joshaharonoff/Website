@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title> Josh Aharonoff | Check Nums</title>
+   <head profile="http://www.w3.org/2005/10/profile">
+   <link rel="icon" 
+      type="image/png" 
+      href="../img/favicon.ico">
+   <link rel="stylesheet" href="../css/normalize.css">
+   <link href='http://fonts.googleapis.com/css family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/responsive.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
+ </head>
+  <body>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1601008736820409";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      
+    <header>
+      <a href="../index" id="logo">
+        <h1> Josh Aharonoff </h1>
+        <h2> </h2>        
+      </a>
+      <nav>
+        <ul>
+          <li> <a href="../portfolio"> Portfolio </a> </li>
+          <li> <a href="../about"> About </a> </li>
+          <li> <a href="../coderbyte.php"> Coderbyte </a> </li> 
+          <li> <a href="../contact"> Contact </a> </li>        
+          <li> <a href="../"> Blog </a> </li> 
+        </ul> 
+      </nav>
+    </header>
+     <div class='coderbyte_example'>
+        <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/word-count.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        <h3>THE PROBLEM</h3>
+          <div class= 'coderbyte_problem'> 
+              <p>Have the function WordCount(str) take the str string parameter being passed and return the number of words the string contains (ie. "Never eat shredded wheat" would return 4). Words will be separated by single spaces.  </p>
+              <p>Use the Parameter Testing feature in the box below to test your code with different arguments.</p>
+              <p><a href='http://coderbyte.com/CodingArea/Language.php?ct=Word%20Count'> Check the problem here </a></p> 
+          </div>
+     <h3>MY SOLUTION</h3>
+     <div class= 'coderbyte_solution'>
+            <ul>
+              <p><span style='color:rgb(255,0,255)'>function</span>  WordCount(str) { </p>
+                <li>&nbsp<span style='color:rgb(255,0,255)'>var</span> numberOfSpaces =<span style='color:rgb(123,216,39)'> str</span>.trim().match( / /g)</li>
+                <li>&nbsp <span style='color:rgb(255,0,255)'>if</span>( <span style='color:rgb(123,216,39)'> numberOfSpaces</span> != <span style='color:rgb(255,173,70)'>null</span>) {</li>  
+                <li>&nbsp &nbsp<span style='color:rgb(255,0,255)'>var</span> numberOfWords = <span style='color:rgb(123,216,39)'> numberOfSpaces</span>.length+1</li>
+                <li>&nbsp &nbsp { <span style='color:rgb(255,0,255)'>else</span> {</li>
+                <li>&nbsp &nbsp <span style='color:rgb(255,0,255)'>var</span> numberOfWords = 1</li>
+                <li>&nbsp &nbsp }</li>
+                <p><span style='color:rgb(255,0,255)'>return</span> <span style='color:rgb(123,216,39)'> numberOfWords</span></p>
+                <p>}</p>
+            </ul>      
+      </div>
+      <h3>MY ANALYSIS</h3>
+             <p>This problem is actually the easiest of the easiests in my opinion. It utilizes 1 function - "if".</p>
+             <p>We have 3 arguements here. Let's analyze each one:</p> 
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'>var</span> result=0;</li>
+                </ul>
+              </div> 
+              <div class="fb-like" data-href="INSERT LINK HERE" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+              <div class="fb-comments" data-href="INSERT LINK HERE" data-width="100%" data-numposts="10"></div>    
+    <footer>
+        <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
+        <p> &copy; 2015 Josh Aharonoff.</p>
+    </footer>     
+  </body> 
+</html>          
