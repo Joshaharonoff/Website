@@ -1,3 +1,5 @@
+
+
 <?php 
   include('includes/header.php'); 
 ?>
@@ -7,7 +9,7 @@
 <div class="tic-tac-toe">
 
   <h1>Let's play some Tic-Tac-Toe!</h1>
-  <input type= "button" value = "Your Turn!" onClick= "solve();"> 
+  <input type= "button" value = "New Game!" onClick= "solve();"> 
   <div id="row1" class="row">
     <input type="text" id="top-left">
     <input type="text" id="top-middle">
@@ -43,7 +45,7 @@
     
     var top = [tl,tm,tr];
 
-    if()){
+    if(){
       alert('ok woah..this may have worked')
     }
    

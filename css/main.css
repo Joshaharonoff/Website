@@ -412,7 +412,8 @@ Why Learing To Code Has Changed My Life
 *********************************/
 
 .tic-tac-toe{
-  display:inline;
+  max-width:710px;
+  margin:auto;
 }
 
 .tic-tac-toe .row{
@@ -427,13 +428,48 @@ Why Learing To Code Has Changed My Life
 }
 
 .tic-tac-toe h1{
-  margin: 0 34% 5%;
+  margin: 0 0 8% 15%
 }
 
 .tic-tac-toe input[type='button']{
   font-size:40px;
-  float:right;
-  margin-right:17%;
+  margin-left: 35%;
+  margin-bottom:10%;
   background-color:rgb(213, 92, 57);
   color:white;
 }
+
+ .tic-tac-toe #table{
+  border-style: solid;
+  border-color: black;
+  width: 55%;
+  height:250px;
+  margin: 0 0 7% 23%;
+  text-align:center;
+ } 
+
+ .tic-tac-toe tr{
+  height:100px;
+ }
+
+ .tic-tac-toe td{
+    border:solid;
+    font-size:40px;
+    width:33%;
+
+ }
+
+ .tic-tac-toe #message{
+    margin: 0px 0% 5% 40%;
+    border: solid;
+    border-radius: 14px;
+    border-width: 1px;
+    max-width: 22%;
+    height: 38px;
+    padding: 13px 0 0 0;
+    text-align: center;
+    background-color: #4D884D;
+    color: white;
+    font-weight:500;
+ }
+
