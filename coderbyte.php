@@ -15,7 +15,8 @@
           <p><a href='http://joshaharonoff.com/coderbyte/letter-capitalize.html'>Letter Capitalize</a></p>
           <p><a href='http://joshaharonoff.com/coderbyte/check-nums.html'>Check Nums</a></p>
           <p><a href='http://joshaharonoff.com/coderbyte/alphabet-soup.html'>Alphabet Soup</a></p>
-           <p><a href='http://joshaharonoff.com/coderbyte/vowel-count.html'>Vowel Count</a></p>
+          <p><a href='http://joshaharonoff.com/coderbyte/vowel-count.html'>Vowel Count</a></p>
+          <p><a href='http://joshaharonoff.com/coderbyte/word-count.html'>Word Count</a></p>
 
         </div>
     </div>  

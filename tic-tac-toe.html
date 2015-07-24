@@ -8,7 +8,7 @@
       type="image/png" 
       href="img/favicon.ico">
    <link rel="stylesheet" href="css/normalize.css">
-   <link href='http://fonts.googleapis.com/css family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet'>
    <link rel="stylesheet" href="css/main.css">
    <link rel="stylesheet" href="css/responsive.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
@@ -31,31 +31,80 @@
       <script type="text/javascript">
           
           function play() {
+            
             document.turn = "X";
+            if (Math.random() < .5){
+              document.turn = "O"
+            }
             
             setMessage ( document.turn + ' will be starting')
           }
 
           function setMessage(msg){
-            document.getElementById("message").innerText = msg
+            document.getElementById("message").innerHTML = msg
           }
 
           function nextMove(move){
-            if(move.innerText === ''){
-              move.innerText = document.turn
-              switchTurn(); 
+             if(checkForWinner(document.turn)){
+             } else if(move.innerHTML === ''){
+              move.innerHTML = document.turn
+              switchTurn();
             } 
-            setMessage ('Hey '+ document.turn + ', it\'s your turn!')
+            
           }
 
           function switchTurn(){
-            if (document.turn === "X"){
+              if(checkForWinner(document.turn)){
+                setMessage("Looks like " +document.turn + " wins!");
+                
+            }else if (document.turn === "X"){
               document.turn = "O";
+               setMessage ('Hey '+ document.turn + ', it\'s your turn!')
             } else {
               document.turn = "X";
+               setMessage ('Hey '+ document.turn + ', it\'s your turn!')
+            }
+          }
+
+          function getBoxValue(number){
+            return document.getElementById("box"+number).innerHTML;
+          }
+
+          function checkRow(a,b,c, value){
+            var result = false
+            if(getBoxValue(a) === value && getBoxValue(b) === value && getBoxValue(c) === value){
+              result = true
+              document.getElementById("box"+a).style.backgroundColor = '#C1CFC1'; 
+              document.getElementById("box"+b).style.backgroundColor = "#C1CFC1"; 
+              document.getElementById("box"+c).style.backgroundColor = "#C1CFC1"; 
+            }
+            return result
+          }
+
+          function checkForWinner(value){
+            var result = false
+            if(checkRow(1,2,3,value) ||
+               checkRow(4,5,6,value) || 
+               checkRow(7,8,9,value) ||
+               checkRow(1,4,7,value) ||
+               checkRow(2,5,8,value) ||
+               checkRow(3,6,9,value) ||
+               checkRow(1,5,9,value) ||
+               checkRow(3,5,7,value)){
+              result = true;
+            }
+            return result
+          }
+
+          function resetGame(){
+            for(i=1;i<=9;i++){
+             document.getElementById("box"+i).innerHTML = '';
+             document.getElementById("box"+i).style.backgroundColor='white';
+             setMessage ( document.turn + ' will be starting')
             }
           }
           
+
       </script>
  
      
@@ -69,22 +118,22 @@
 
   <table id = 'table'>
       <tr>
-       <td id = '1' onclick = 'nextMove(this)'></td>
-       <td id = '2' onclick = 'nextMove(this)'></td>
-       <td id = '3' onclick = 'nextMove(this)'></td>
+       <td id = 'box1' onclick = 'nextMove(this)'></td>
+       <td id = 'box2' onclick = 'nextMove(this)'></td>
+       <td id = 'box3' onclick = 'nextMove(this)'></td>
       </tr>
       <tr>
-       <td id = '4' onclick = 'nextMove(this)'></td>
-       <td id = '5' onclick = 'nextMove(this)'></td>
-       <td id = '6' onclick = 'nextMove(this)'></td>
+       <td id = 'box4' onclick = 'nextMove(this)'></td>
+       <td id = 'box5' onclick = 'nextMove(this)'></td>
+       <td id = 'box6' onclick = 'nextMove(this)'></td>
       </tr>
       <tr>
-       <td id = '7' onclick = 'nextMove(this)'></td>
-       <td id = '8' onclick = 'nextMove(this)'></td>
-       <td id = '9' onclick = 'nextMove(this)'></td>
+       <td id = 'box7' onclick = 'nextMove(this)'></td>
+       <td id = 'box8' onclick = 'nextMove(this)'></td>
+       <td id = 'box9' onclick = 'nextMove(this)'></td>
       </tr>
   </table>  
-  <input type= "button" value = "New Game!" onclick= "resetGame()"> 
+  <input type= "button" value = "New Game" onclick= "resetGame()"> 
 
 </div>
 

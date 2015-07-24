@@ -2,7 +2,7 @@
 <html>
  <head>
    <meta charset="utf-8">
-   <title> Josh Aharonoff | Check Nums</title>
+   <title> Josh Aharonoff | Word Count</title>
    <head profile="http://www.w3.org/2005/10/profile">
    <link rel="icon" 
       type="image/png" 
@@ -14,7 +14,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
  </head>
   <body>
-      <div id="fb-root"></div>
+    <div id="fb-root"></div>
       <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -42,34 +42,73 @@
         <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/word-count.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
         <h3>THE PROBLEM</h3>
           <div class= 'coderbyte_problem'> 
-              <p>Have the function WordCount(str) take the str string parameter being passed and return the number of words the string contains (ie. "Never eat shredded wheat" would return 4). Words will be separated by single spaces.  </p>
+              <p>Have the function WordCount(str) take the str string parameter being passed and return the number of words the string contains (ie. "Never eat shredded wheat" would return 4). Words will be separated by single spaces.  </p> 
               <p>Use the Parameter Testing feature in the box below to test your code with different arguments.</p>
               <p><a href='http://coderbyte.com/CodingArea/Language.php?ct=Word%20Count'> Check the problem here </a></p> 
           </div>
      <h3>MY SOLUTION</h3>
      <div class= 'coderbyte_solution'>
             <ul>
-              <p><span style='color:rgb(255,0,255)'>function</span>  WordCount(str) { </p>
-                <li>&nbsp<span style='color:rgb(255,0,255)'>var</span> numberOfSpaces =<span style='color:rgb(123,216,39)'> str</span>.trim().match( / /g)</li>
-                <li>&nbsp <span style='color:rgb(255,0,255)'>if</span>( <span style='color:rgb(123,216,39)'> numberOfSpaces</span> != <span style='color:rgb(255,173,70)'>null</span>) {</li>  
-                <li>&nbsp &nbsp<span style='color:rgb(255,0,255)'>var</span> numberOfWords = <span style='color:rgb(123,216,39)'> numberOfSpaces</span>.length+1</li>
-                <li>&nbsp &nbsp { <span style='color:rgb(255,0,255)'>else</span> {</li>
-                <li>&nbsp &nbsp <span style='color:rgb(255,0,255)'>var</span> numberOfWords = 1</li>
-                <li>&nbsp &nbsp }</li>
-                <p><span style='color:rgb(255,0,255)'>return</span> <span style='color:rgb(123,216,39)'> numberOfWords</span></p>
+              <p><span style='color:rgb(255,0,255)'>function</span> WordCount(str) {  </p>
+                  <li>&nbsp<span style='color:rgb(255,0,255)'>var</span> numberOfSpaces = <span style='color:rgb(123,216,39)'>str</span>.trim().match( / /g )</li>
+                  <li>&nbsp<span style='color:rgb(255,0,255)'>if</span> <span style='color:rgb(123,216,39)'>(numberOfSpaces </span>!=<span style='color:rgb(244,194,11)'> null</span>) {</li>
+                  <li>&nbsp&nbsp <span style='color:rgb(255,0,255)'>var</span> numberOfWords = <span style='color:rgb(123,216,39)'>numberOfSpaces</span>.length + 1 </li>
+                  <li>&nbsp&nbsp} </li>
+                  <li><span style='color:rgb(255,0,255)'>else </span> {<span style='color:rgb(255,0,255)'> var</span> numberOfWords = 1 }</li>
+                  
+                  <p><span style='color:rgb(255,0,255)'>return </span><span style='color:rgb(123,216,39)'>numberOfWords</span>;</p>
+                      
                 <p>}</p>
             </ul>      
       </div>
       <h3>MY ANALYSIS</h3>
-             <p>This problem is actually the easiest of the easiests in my opinion. It utilizes 1 function - "if".</p>
-             <p>We have 3 arguements here. Let's analyze each one:</p> 
+             <p>Once again, our dear friend Regex shows up to save the day </p>
+             <p>Essentially what we are doing is telling the code to search for  spaces in the string in between words (not including spaces before the first word and after the last word). Then count up all the spaces you find, add 1, and give us the number. Since we’re told each word will only be separated by one space, this method should work well. </p>
+             <img src="../img/word-count-spaces.jpg" style='margin: 4% 20%'>
+             <p>We start with creating a new variable, “numberOfSpace” which does just that. The first step is for us to use the trim() function, which will cut off any spaces appearing before the first word and any spaces appearing after the last word. </p>
+                  
               <div class= 'coderbyte_solution'>
                 <ul>
-                  <li><span style='color:rgb(255,0,255)'>var</span> result=0;</li>
+                  <li><span style='color:rgb(123,216,39)'>str</span>.trim()</li>
                 </ul>
               </div> 
-              <div class="fb-like" data-href="INSERT LINK HERE" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-              <div class="fb-comments" data-href="INSERT LINK HERE" data-width="100%" data-numposts="10"></div>    
+                <p>We then apply the match function to search for every blank space in our string</p>                     
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>.match( / /g )</li>
+                </ul>
+              </div> 
+              <p>Next, we set an if statement. This is important, because there may just be one word in our string, which would make the value for our numberOfSpaces variable null, throwing off our entire formula.</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>&nbsp<span style='color:rgb(255,0,255)'>if</span> <span style='color:rgb(123,216,39)'>(numberOfSpaces </span>!=<span style='color:rgb(244,194,11)'> null</span>) {</li>
+                </ul>
+              </div> 
+              
+              <p>In the event that there are atleast 2 words in our string,  we’re going to assign a new variable, numberOfWords to equal the length of our numberOfSpaces variable, plus one.</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>&nbsp&nbsp <span style='color:rgb(255,0,255)'>var</span> numberOfWords = <span style='color:rgb(123,216,39)'>numberOfSpaces</span>.length + 1 </li>
+                  <li>&nbsp&nbsp} </li>
+                </ul>
+              </div> 
+              <p>Otherwise, if there is just one word in our string, making our numberOfSpaces value equal to null, we will assign a value of 1 to our numberOfWords value.</p>
+               <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'>else </span> {<span style='color:rgb(255,0,255)'> var</span> numberOfWords = 1 }</li>
+                
+                </ul>
+              </div>
+              <p>Buy a ribbon, tie a nice bow and wrap it up - now we’re going to return our numberOfWords variable and we’re all set!</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                <p><span style='color:rgb(255,0,255)'>return </span><span style='color:rgb(123,216,39)'>numberOfWords</span>;</p>   
+                <p>}</p>
+                </ul>
+              </div> 
+
+              <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/word-count.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+              <div class="fb-comments" data-href="http://joshaharonoff.com/coderbyte/word-count.html" data-width="100%" data-numposts="10"></div>    
     <footer>
         <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
         <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
