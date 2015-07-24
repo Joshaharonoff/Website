@@ -72,14 +72,13 @@
     </footer> 
     <script type="text/javascript">
           
-          var turn = "X"
           function play() {
 
-            turn = "X";
+            document.turn = "X";
             if (Math.random() < .5){
-             turn = "O"
+              document.turn = "O"
             }            
-            setMessage ( turn + ' will be starting')
+            setMessage ( document.turn + ' will be starting')
           }
 
           function setMessage(msg){
@@ -87,9 +86,9 @@
           }
 
           function nextMove(move){
-             if(checkForWinner(turn)){
+             if(checkForWinner(document.turn)){
              } else if(move.innerHTML === ''){
-              move.innerHTML = turn
+              move.innerHTML = document.turn
               switchTurn();
             }            
           }
@@ -97,15 +96,15 @@
           function switchTurn(){
             if(catsGame()){
               setMessage ("Cats Game!")
-            } else if(checkForWinner(turn)){
-                setMessage("Looks like " +turn + " wins!");
+            } else if(checkForWinner(document.turn)){
+                setMessage("Looks like " +document.turn + " wins!");
                 
-            } else if (turn === "X"){
-              turn = "O";
-               setMessage ('Hey '+ turn + ', it\'s your turn!')
+            } else if (document.turn === "X"){
+              document.turn = "O";
+               setMessage ('Hey '+ document.turn + ', it\'s your turn!')
             } else {
-              turn = "X";
-               setMessage ('Hey '+ turn + ', it\'s your turn!')
+              document.turn = "X";
+               setMessage ('Hey '+ document.turn + ', it\'s your turn!')
             }
           }
 
@@ -115,12 +114,11 @@
 
           function checkRow(a,b,c, value){
             var result = false
-            var winningColor = '#C1CFC1'
             if(getBoxValue(a) === value && getBoxValue(b) === value && getBoxValue(c) === value){
               result = true
-              document.getElementById("box"+a).style.backgroundColor = winningColor; 
-              document.getElementById("box"+b).style.backgroundColor = winningColor; 
-              document.getElementById("box"+c).style.backgroundColor = winningColor; 
+              document.getElementById("box"+a).style.backgroundColor = '#C1CFC1'; 
+              document.getElementById("box"+b).style.backgroundColor = "#C1CFC1"; 
+              document.getElementById("box"+c).style.backgroundColor = "#C1CFC1"; 
             }
             return result
           }
@@ -159,7 +157,7 @@
             for(i=1;i<=9;i++){
              document.getElementById("box"+i).innerHTML = '';
              document.getElementById("box"+i).style.backgroundColor='white';
-             play()
+             setMessage ( document.turn + ' will be starting')
             }
           }
           
