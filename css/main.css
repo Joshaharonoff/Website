@@ -446,6 +446,7 @@ Why Learing To Code Has Changed My Life
   height:250px;
   margin: 0 0 7% 23%;
   text-align:center;
+  background-color:grey          
  } 
 
  .tic-tac-toe tr{
@@ -459,6 +460,22 @@ Why Learing To Code Has Changed My Life
 
  }
 
+.tic-tac-toe #message{
+    margin: 0 auto 40px;
+    max-width: 35%;
+    height: 38px;
+    padding: 13px 0 0 0;
+    text-align: center;
+    font-size:25px;
+    color:rgb(39, 112, 229)
+}
+
+.tic-tac-toe td:hover{
+    background-color:rgba(255, 248, 248, 0.78);
+    cursor:pointer;
+        
+}
+/*
  .tic-tac-toe #message{
     margin: 0px 0% 5% 40%;
     border: solid;
@@ -472,4 +489,5 @@ Why Learing To Code Has Changed My Life
     color: white;
     font-weight:500;
  }
+*/
 

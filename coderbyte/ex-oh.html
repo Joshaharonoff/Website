@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title> Josh Aharonoff | Ex Oh</title>
+   <head profile="http://www.w3.org/2005/10/profile">
+   <link rel="icon" 
+      type="image/png" 
+      href="../img/favicon.ico">
+   <link rel="stylesheet" href="../css/normalize.css">
+   <link href='http://fonts.googleapis.com/css family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/responsive.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
+ </head>
+  <body>
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1601008736820409";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      
+    <header>
+      <a href="../index" id="logo">
+        <h1> Josh Aharonoff </h1>
+        <h2> </h2>        
+      </a>
+      <nav>
+        <ul>
+          <li> <a href="../portfolio"> Portfolio </a> </li>
+          <li> <a href="../about"> About </a> </li>
+          <li> <a href="../coderbyte.php"> Coderbyte </a> </li> 
+          <li> <a href="../contact"> Contact </a> </li>        
+          <li> <a href="../"> Blog </a> </li> 
+        </ul> 
+      </nav>
+    </header>
+     <div class='coderbyte_example'>
+        <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/ex-oh.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        <h3>THE PROBLEM</h3>
+          <div class= 'http://joshaharonoff.com/coderbyte/ex-oh.html'> 
+              <p>Have the function ExOh(str) take the str parameter being passed and return the string true if there is an equal number of x's and o's, otherwise return the string false. Only these two letters will be entered in the string, no punctuation or numbers. For example: if str is "xooxxxxooxo" then the output should return false because there are 6 x's and 5 o's.  </p> 
+              <p>Use the Parameter Testing feature in the box below to test your code with different arguments.</p>
+              <p><a href='http://coderbyte.com/CodingArea/Language.php?ct=Ex%20Oh'> Check the problem here </a></p> 
+          </div>
+     <h3>MY SOLUTION</h3>
+     <div class= 'coderbyte_solution'>
+            <ul>
+              <p><span style='color:rgb(255,0,255)'>function</span> ExOh(str) { </p>
+                  <li><span style='color:rgb(255,0,255)'>var</span> x =<span style='color:rgb(123,216,39)'> str</span>.match( /[x]/g ).length;</li>
+                <li><span style='color:rgb(255,0,255)'>var</span> o =<span style='color:rgb(123,216,39)'> str</span>.match( /[o]/g ).length;</li>
+                  
+                  <li>&nbsp<span style='color:rgb(255,0,255)'>return </span><span style='color:rgb(123,216,39)'>x</span> === <span style='color:rgb(123,216,39)'>o</span></li>          
+                <p>}</p>
+            </ul>      
+      </div>
+      <h3>MY ANALYSIS</h3>
+             <p>Dear Regex, have you ever steered us wrong? Having a bit of knowledge, as usual, helps us greatly with putting together our function. We’re essentially creating 2 variable...one to find every instance of ‘x’, one to find every instance of ‘o’. Let’s analyze line by line.</p>
+             <p>Here we create a variable, x, and tell it to match every instance in our (str) parameter in which the letter ‘x’ is displayed. We then count the amount of times an ‘x’ is found by adding ‘.length’ at the end.</p> 
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'>var</span> x =<span style='color:rgb(123,216,39)'> str</span>.match( /[x]/g ).length;</li>
+                </ul>
+              </div> 
+             <p>Next, we do the same thing, this time searching for every instance of ‘o’ in our (str) parameter.</p>
+         <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'>var</span> o =<span style='color:rgb(123,216,39)'> str</span>.match( /[o]/g ).length;</li>
+                </ul>
+              </div> 
+            <p>Last but not least, we want to know if they are equal or not...after all..that’s the whole point of our function right? Simple. We create a statement that will evaluate to either “true” or “false” (what’s known as a boolean), by making a statement that the two variable equal each other. Oh and don’t worry, the computer will know if you’re liying!</p>
+         <div class= 'coderbyte_solution'>
+                <ul>
+                    <li>&nbsp<span style='color:rgb(255,0,255)'>return </span><span style='color:rgb(123,216,39)'>x</span> === <span style='color:rgb(123,216,39)'>o</span></li> 
+                </ul>
+              </div>
+              <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/ex-oh.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+              <div class="fb-comments" data-href="http://joshaharonoff.com/coderbyte/ex-oh.html" data-width="100%" data-numposts="10"></div>    
+    <footer>
+        <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
+        <p> &copy; 2015 Josh Aharonoff.</p>
+    </footer>     
+  </body> 
+</html>          

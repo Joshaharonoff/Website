@@ -17,6 +17,7 @@
           <p><a href='http://joshaharonoff.com/coderbyte/alphabet-soup.html'>Alphabet Soup</a></p>
           <p><a href='http://joshaharonoff.com/coderbyte/vowel-count.html'>Vowel Count</a></p>
           <p><a href='http://joshaharonoff.com/coderbyte/word-count.html'>Word Count</a></p>
+          <p><a href='http://joshaharonoff.com/coderbyte/ex-oh.html'>Ex Oh</a></p>
 
         </div>
     </div>  

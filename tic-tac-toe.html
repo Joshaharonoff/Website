@@ -60,7 +60,7 @@
 
 </div>
 
-</script>
+
 
 
 
@@ -72,12 +72,16 @@
     </footer> 
     <script type="text/javascript">
           
-          var turn = "X"
+          var turn = '';
+          var playerOne = "X";
+          var playerTwo = "O";
+          
+          
           function play() {
 
-            turn = "X";
+            turn = playerOne;
             if (Math.random() < .5){
-             turn = "O"
+             turn = playerTwo;
             }            
             setMessage ( turn + ' will be starting')
           }
@@ -95,18 +99,19 @@
           }
 
           function switchTurn(){
-            if(catsGame()){
+            if(checkForWinner(turn)){
+                setMessage("Looks like " +turn + " wins!");                
+            } else if(catsGame()){
               setMessage ("Cats Game!")
-            } else if(checkForWinner(turn)){
-                setMessage("Looks like " +turn + " wins!");
-                
-            } else if (turn === "X"){
-              turn = "O";
-               setMessage ('Hey '+ turn + ', it\'s your turn!')
-            } else {
-              turn = "X";
-               setMessage ('Hey '+ turn + ', it\'s your turn!')
-            }
+            } 
+              else{ 
+                if(turn === playerOne){
+                    turn = playerTwo;}
+                else{
+                    turn = playerOne;
+                }
+               setMessage ('Hey '+ turn + ', it\'s your turn!');
+            } 
           }
 
           function getBoxValue(number){
@@ -114,13 +119,15 @@
           }
 
           function checkRow(a,b,c, value){
-            var result = false
-            var winningColor = '#C1CFC1'
-            if(getBoxValue(a) === value && getBoxValue(b) === value && getBoxValue(c) === value){
-              result = true
-              document.getElementById("box"+a).style.backgroundColor = winningColor; 
-              document.getElementById("box"+b).style.backgroundColor = winningColor; 
-              document.getElementById("box"+c).style.backgroundColor = winningColor; 
+            var result = false;
+            var winningColor = '#C1CFC1';
+            var cells = [a,b,c];
+            var checkCells = cells.every(function (cell){ return getBoxValue(cell)===value});  
+            if(checkCells){
+              result = true;
+              for(var i=0;i<cells.length;i++){
+              document.getElementById("box"+cells[i]).style.backgroundColor = winningColor; 
+              }
             }
             return result
           }
@@ -141,22 +148,15 @@
           }
 
           function catsGame(){
-            var result = false;
             var newArray= [];
-            for(i=1;i<=9;i++){
-            if( getBoxValue(i)!==""){
-              newArray.push(getBoxValue(i))
-            }
-
-          }
-           if(newArray.length === 9){
-              result = true
-            }
-            return result
+            for(var i=1;i<=9;i++){               
+                  newArray.push(getBoxValue(i))
+              }
+            return newArray.every(function(cell){return cell !== ""});            
           }
 
           function resetGame(){
-            for(i=1;i<=9;i++){
+            for(var i=1;i<=9;i++){
              document.getElementById("box"+i).innerHTML = '';
              document.getElementById("box"+i).style.backgroundColor='white';
              play()
