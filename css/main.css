@@ -491,3 +491,32 @@ Why Learing To Code Has Changed My Life
  }
 */
 
+/*********************************
+            Connect Four
+*********************************/
+
+.connect-four{
+  max-width:710px;
+  margin:auto;
+}
+
+.connect-four-circle {
+  width:10%;
+  height:45px;
+  border:2px solid black;
+  border-radius:50%;
+  display:inline-block;
+  
+  
+}
+
+#circle1{
+  margin-left:15%;  
+  
+}
+
+.connect-four h3{
+  font-size:30px;
+  margin:0 0% 8% 17%
+    
+}
