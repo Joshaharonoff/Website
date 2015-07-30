@@ -12,7 +12,8 @@
    <link rel="stylesheet" href="css/responsive.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
  </head>
- <header>
+   
+    <header>
       <a href="/index" id="logo">
         <h1> Josh Aharonoff </h1>
         <h2> </h2>        
@@ -27,76 +28,71 @@
         </ul> 
       </nav>
     </header>
-    <body>
+   
+    <body onload = 'createBoard()'>
       
-      <div class='connect-four'>  
+      <div class='connect-four' id = 'connect-four-board'>  
         <h3> Let's Play Some Connect Four!</h3>
-        <div class= 'connect-four-row'>
-          <div class = 'connect-four-circle' id= 'circle1' onclick = 'setColor(this)'></div>
-          <div class = 'connect-four-circle' id= 'circle2'></div>
-          <div class = 'connect-four-circle' id= 'circle3'></div>
-          <div class = 'connect-four-circle' id= 'circle4'></div>      
-          <div class = 'connect-four-circle' id= 'circle5'></div> 
-          <div class = 'connect-four-circle' id= 'circle6'></div>
-          <div class = 'connect-four-circle' id= 'circle7'></div>
-        </div>
-        <div class= 'connect-four-row'>
-          <div class = 'connect-four-circle' id= 'circle1'></div>
-          <div class = 'connect-four-circle' id= 'circle2'></div>
-          <div class = 'connect-four-circle' id= 'circle3'></div>
-          <div class = 'connect-four-circle' id= 'circle4'></div>      
-          <div class = 'connect-four-circle' id= 'circle5'></div> 
-          <div class = 'connect-four-circle' id= 'circle6'></div>
-          <div class = 'connect-four-circle' id= 'circle7'></div>
-        </div>
-        <div class= 'connect-four-row'>
-          <div class = 'connect-four-circle' id= 'circle1'></div>
-          <div class = 'connect-four-circle' id= 'circle2'></div>
-          <div class = 'connect-four-circle' id= 'circle3'></div>
-          <div class = 'connect-four-circle' id= 'circle4'></div>      
-          <div class = 'connect-four-circle' id= 'circle5'></div> 
-          <div class = 'connect-four-circle' id= 'circle6'></div>
-          <div class = 'connect-four-circle' id= 'circle7'></div>
-        </div>
-        <div class= 'connect-four-row'>
-          <div class = 'connect-four-circle' id= 'circle1'></div>
-          <div class = 'connect-four-circle' id= 'circle2'></div>
-          <div class = 'connect-four-circle' id= 'circle3'></div>
-          <div class = 'connect-four-circle' id= 'circle4'></div>      
-          <div class = 'connect-four-circle' id= 'circle5'></div> 
-          <div class = 'connect-four-circle' id= 'circle6'></div> 
-          <div class = 'connect-four-circle' id= 'circle7'></div>
-        </div>
-        <div class= 'connect-four-row'>
-          <div class = 'connect-four-circle' id= 'circle1'></div>
-          <div class = 'connect-four-circle' id= 'circle2'></div>
-          <div class = 'connect-four-circle' id= 'circle3'></div>
-          <div class = 'connect-four-circle' id= 'circle4'></div>      
-          <div class = 'connect-four-circle' id= 'circle5'></div> 
-          <div class = 'connect-four-circle' id= 'circle6'></div>
-          <div class = 'connect-four-circle' id= 'circle7'></div>
-        </div>
-        <div class= 'connect-four-row'>
-          <div class = 'connect-four-circle' id= 'circle1'></div>
-          <div class = 'connect-four-circle' id= 'circle2'></div>
-          <div class = 'connect-four-circle' id= 'circle3'></div>
-          <div class = 'connect-four-circle' id= 'circle4'></div>      
-          <div class = 'connect-four-circle' id= 'circle5'></div> 
-          <div class = 'connect-four-circle' id= 'circle6'></div> 
-          <div class = 'connect-four-circle' id= 'circle7'></div>
+        <div id = 'playColorMessage'>
+          <h4>Choose a color!</h4>
         </div>
       </div>
    </body>
+   
     <script type='text/javascript'>
-        var row = 6;
-        var column = 7;
-      function startGame(){
-        document.print('<h1> Hey there!</h1>')
+        
+            
+      function createBoard(){
+        var NUM_ROWS = 6;
+        var NUM_COLUMNS = 7;
+        var numOfPlayers = 2;
+        var board;
+        var rowElement;
+        var circleElement;
+        
+        // 1. get the connect four board
+        board = document.getElementById('connect-four-board');  
+        // 2. create the cells
+        for (var row = 1; row <=NUM_ROWS; ++row){
+          rowElement = document.createElement ("div")
+          rowElement.setAttribute("class", "connect-four-row")
+          // create a row
+          for (var col = 1; col <=NUM_COLUMNS; ++col){
+            circleElement = document.createElement("div")
+            circleElement.setAttribute ("class", "connect-four-circle")
+            circleElement.setAttribute ("id", "circle" + ((row - 1) *NUM_COLUMNS + col));
+            circleElement.onclick = setColor;
+            
+            
+            // add the cell to the current row
+            
+            rowElement.appendChild(circleElement);
+            
+          }  
+          // add the row to the connect for board
+          board.appendChild(rowElement);
+        }        
       }
-        function setColor(divElement){
-          console.log(divElement);
-          divElement.style.backgroundColor = 'blue';
-        };
+      
+      var color = "blue"
+      function colors (){        
+        if(color === "blue"){
+           color = "yellow"
+        } else {
+        color = "blue"
+        }
+        return color
+      }
+      
+      function setPlayColor(){
+        document.getElementById('playColorMessage').innerHTML = 'yo dog!';
+      }
+      
+      
+      function setColor(){      
+        this.style.backgroundColor = colors();
+      }      
+     
    </script>
     <footer>
         <a href="http://www.twitter.com/joshaharonoff"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
