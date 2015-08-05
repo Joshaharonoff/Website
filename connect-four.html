@@ -56,41 +56,46 @@
         for (var row = 1; row <=NUM_ROWS; ++row){
           rowElement = document.createElement ("div")
           rowElement.setAttribute("class", "connect-four-row")
-          // create a row
+        // 3. create a row
           for (var col = 1; col <=NUM_COLUMNS; ++col){
             circleElement = document.createElement("div")
             circleElement.setAttribute ("class", "connect-four-circle")
             circleElement.setAttribute ("id", "circle" + ((row - 1) *NUM_COLUMNS + col));
-            circleElement.onclick = setColor;
-            
-            
-            // add the cell to the current row
-            
-            rowElement.appendChild(circleElement);
-            
+            circleElement.onclick = setColor;    
+        // 4. add the cell to the current row            
+            rowElement.appendChild(circleElement);            
           }  
-          // add the row to the connect for board
+        // 5. add the row to the connect for board
           board.appendChild(rowElement);
-        }        
-      }
-      
-      var color = "blue"
-      function colors (){        
-        if(color === "blue"){
-           color = "yellow"
-        } else {
-        color = "blue"
         }
-        return color
+        setPlayColor(color+ " will start")
       }
       
-      function setPlayColor(){
-        document.getElementById('playColorMessage').innerHTML = 'yo dog!';
+      var color = "Blue";
+      
+      if(Math.random() <.5){
+        color = "Yellow";
+      }else{
+        color = "Blue";
       }
       
+      function setPlayColor(color){
+        document.getElementById('playColorMessage').innerHTML = color;
+      }
+      
+      function switchColors (){        
+        if(color === "Blue"){
+           color = "Yellow"
+        } else {
+        color = "Blue"
+        }
+        return color;
+        setPlayColor("ABCDEFG");
+      }
       
       function setColor(){      
-        this.style.backgroundColor = colors();
+        this.style.backgroundColor = color;
+        switchColors()
       }      
      
    </script>
