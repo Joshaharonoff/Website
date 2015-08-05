@@ -36,6 +36,11 @@
         <div id = 'playColorMessage'>
           <h4>Choose a color!</h4>
         </div>
+        
+      </div>
+      <div id = 'newGameButton'>
+        <input type= "button" value = "New Game" onclick="newGame()">
+        
       </div>
    </body>
    
@@ -75,9 +80,9 @@
       
       if(Math.random() <.5){
         color = "Yellow";
-      }else{
+      } else {
         color = "Blue";
-      }
+        }
       
       function setPlayColor(color){
         document.getElementById('playColorMessage').innerHTML = color;
@@ -89,14 +94,21 @@
         } else {
         color = "Blue"
         }
-        return color;
-        setPlayColor("ABCDEFG");
+        setPlayColor(color+", it's your turn!");
+        return color;        
       }
       
       function setColor(){      
         this.style.backgroundColor = color;
         switchColors()
-      }      
+      } 
+      
+//      function newGame(){
+//        for(var i = 0; i<= NUM_ROWS*NUM_COLUMNS; ++1){
+//          
+//        }
+//      }
+      
      
    </script>
     <footer>

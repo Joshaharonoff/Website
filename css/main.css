@@ -524,3 +524,14 @@ Why Learing To Code Has Changed My Life
   font-size:25px
   
 }
+
+#newGameButton input[type='button'] {
+  margin: -8% 45% 20px;
+  font-size:30px; 
+  width:10%;
+  height:50px;
+  border: 3px solid green;
+  border-radius:10px;
+  background-color:orange;
+  color:white;
+}
