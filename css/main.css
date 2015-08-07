@@ -45,7 +45,8 @@ h1{
   margin: 15px 0;
   font-size: 1.75em;
   font-weight: normal;
-  line-height: .8em  
+  line-height:1em;
+   
 }
 
 h2{
@@ -123,6 +124,8 @@ PAGE:PORTFOLIO
   margin:0;
   padding:5%;
   font-size: 0.75em;
+  text-align:center;
+  font-weight: 600;
   color: rgb(34,34,34);
 } 
 /*********************************
@@ -238,10 +241,12 @@ li{
 .blog{
  max-width:710px;
  margin:auto;
+ line-height:1.7em;
 }
 
-.blog_top p .blog_top h1){
+.blog_top p .blog_top h1{
   text-align:center;
+  line-height:1em;
 
 }
 
@@ -255,16 +260,16 @@ li{
 }
 
 .left_blogbox{
-   width:28%;
+  width:28%;
   float:left;
   padding-right:16px;
-  margin-top:34px;
+  margin-top:3px;
 }
 
 .right_blogbox{
-  width:28%;
-  float:right;
-  padding-left:12px;
+  width:28%; 
+  float:right;  
+  padding-right:3%
 }
 
 .comments{
@@ -497,7 +502,6 @@ Why Learing To Code Has Changed My Life
 
 .connect-four{
   max-width:710px;
-  max-width:710px;
   margin: auto auto 10% ;
   text-align:center
 }
@@ -510,8 +514,6 @@ Why Learing To Code Has Changed My Life
   display:inline-block;
   margin: 7px;  
 }
-
-
 
 .connect-four h3{
   font-size:30px;
@@ -527,10 +529,10 @@ Why Learing To Code Has Changed My Life
 
 #newGameButton input[type='button'] {
   margin: -8% 45% 20px;
-  font-size:30px; 
-  width:10%;
+  font-size:1.5em; 
+  width:150px;
   height:50px;
-  border: 3px solid green;
+  border: 3px solid ;
   border-radius:10px;
   background-color:orange;
   color:white;

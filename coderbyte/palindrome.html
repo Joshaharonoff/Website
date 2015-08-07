@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title> Josh Aharonoff | Palindrome</title>
+   <head profile="http://www.w3.org/2005/10/profile">
+   <link rel="icon" 
+      type="image/png" 
+      href="../img/favicon.ico">
+   <link rel="stylesheet" href="../css/normalize.css">
+   <link href='http://fonts.googleapis.com/css family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/responsive.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
+ </head>
+  <body>
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1601008736820409";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      
+    <header>
+      <a href="../index" id="logo">
+        <h1> Josh Aharonoff </h1>
+        <h2> </h2>        
+      </a>
+      <nav>
+        <ul>
+          <li> <a href="../portfolio"> Portfolio </a> </li>
+          <li> <a href="../about"> About </a> </li>
+          <li> <a href="../coderbyte.php"> Coderbyte </a> </li> 
+          <li> <a href="../contact"> Contact </a> </li>        
+          <li> <a href="../"> Blog </a> </li> 
+        </ul> 
+      </nav>
+    </header>
+     <div class='coderbyte_example'>
+        <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/palindrome.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        <h3>THE PROBLEM</h3>
+          <div class= 'coderbyte_problem'> 
+              <p>Have the function Palindrome(str) take the str parameter being passed and return the string true if the parameter is a palindrome, (the string is the same forward as it is backward) otherwise return the string false. For example: "racecar" is also "racecar" backwards. Punctuation and numbers will not be part of the string.  </p> 
+              <p>Use the Parameter Testing feature in the box below to test your code with different arguments.</p>
+              <p><a href='http://coderbyte.com/CodingArea/Language.php?ct=Palindrome'> Check the problem here </a></p>
+          </div>
+     <h3>MY SOLUTION</h3>
+     <div class= 'coderbyte_solution'>
+            <ul>
+              <p><span style='color:rgb(255,0,255)'>function</span> Palindrome(str) { </p>
+                  <li><span style='color:rgb(255,0,255)'>var</span> forward = (<span style='color:rgb(123,216,39)'>str</span>.match(/[a-z]/g)).join(<span style='color:rgb(123,216,39)'>''</span>);</li>
+              <li><span style='color:rgb(255,0,255)'>return</span> <span style='color:rgb(123,216,39)'> forward</span> ===  <span style='color:rgb(123,216,39)'> forward</span>.split(<span style='color:rgb(123,216,39)'>''</span>).reverse().join(<span style='color:rgb(123,216,39)'>''</span>);</li>          
+                <p>}</p>
+            </ul>      
+      </div>
+      <h3>MY ANALYSIS</h3>
+             <p> This problem tests your ability to identify letters only ( as opposed to numbers and spaces), and determine whether it reads the same forward as it does backward. A good function we can use is the reverse() function, which will reverse array items. For that reason, it is also important to be able to convert things easily to an array and a string.</p>
+             <p>Here we’re creating a new variable, “forward”, which will first search for all letters in the string, and only letters (no number or spaces). This will return our str parameters in an array format.</p> 
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'>var</span> forward = (<span style='color:rgb(123,216,39)'>str</span>.match(/[a-z]/g))</li>
+                </ul>
+              </div>
+              <p> we then convert it to a string</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>.join(<span style='color:rgb(123,216,39)'>''</span>)</li>
+                </ul>
+              </div>
+              <p>Now we need to test if it is the same forward as it is backward. We write a return statement, where if our str parameter is the same forward as it is backwards, it will return true. If it is not the same forward as it is backwards, it will return false. Sounds simple enough, right?</p>
+              <p>Here we take our forward variable and convert it back to an array</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li><span style='color:rgb(255,0,255)'>return</span> <span style='color:rgb(123,216,39)'> forward</span> ===  <span style='color:rgb(123,216,39)'> forward</span>.split(<span style='color:rgb(123,216,39)'>''</span>)</li>
+                </ul>
+              </div>
+              <p>Then we reverse the array</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>.reverse()</li>
+                </ul>
+              </div>
+              <p>And finally, convert it back to a string. All done!</p>
+              <div class= 'coderbyte_solution'>
+                <ul>
+                  <li>.join(<span style='color:rgb(123,216,39)'>''</span>)</li>
+                </ul>
+              </div>
+              <div class="fb-like" data-href="http://joshaharonoff.com/coderbyte/palindrome.html" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+              <div class="fb-comments" data href="http://joshaharonoff.com/coderbyte/palindrome.html" data-width="100%" data-numposts="10"></div>    
+    <footer>
+        <a href="http://www.twitter.com/joshaharonoff"><img src="../img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://www.facebook.com/joshaharonoff"><img src="../img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
+        <p> &copy; 2015 Josh Aharonoff.</p>
+    </footer>     
+  </body> 
+</html>          
