@@ -527,7 +527,7 @@ Why Learing To Code Has Changed My Life
   
 }
 
-#newGameButton input[type='button'] {
+#newGameButton {
   margin: -8% 45% 20px;
   font-size:1.5em; 
   width:150px;

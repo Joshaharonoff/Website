@@ -18,6 +18,7 @@
           <p><a href='http://joshaharonoff.com/coderbyte/vowel-count.html'>Vowel Count</a></p>
           <p><a href='http://joshaharonoff.com/coderbyte/word-count.html'>Word Count</a></p>
           <p><a href='http://joshaharonoff.com/coderbyte/ex-oh.html'>Ex Oh</a></p>
+              <p><a href='http://joshaharonoff.com/coderbyte/palindrome.html'>Palindrome</a></p>
 
         </div>
     </div>  

@@ -38,8 +38,8 @@
         </div>
         
       </div>
-      <div id = 'newGameButton'>
-        <input type= "button" value = "New Game" onclick="newGame()">
+      <div>
+        <input type= "button" value = "New Game" id = 'newGameButton'>
         
       </div>
    </body>
@@ -50,14 +50,18 @@
       var NUM_ROWS = 6;
       var NUM_COLUMNS = 7;
       var numOfPlayers = 2;
-      function randomizeStartingTurn(color1,color2){
-        if(Math.random() <.5){
-        color = color1;
-        } else {
-        color = color2;
+      
+     function randomizeStartingTurn(color1,color2){
+          if(Math.random() <.5){
+            return color1;
+          } else {
+            return color2;
           }
-      };
-      var color = randomizeStartingTurn("Blue","Yellow")
+      }
+      
+      var color = randomizeStartingTurn("Blue","Yellow");
+      var newGameButton = document.getElementById('newGameButton') ;
+      newGameButton.onclick = newGame;
        
      
       
@@ -113,8 +117,8 @@
       }
       
       function newGame(){
-        for(var i = 0; i<= NUM_ROWS*NUM_COLUMNS; ++i){
-          document.getElementByid("circle"+i).backgroundColor = 'white';
+        for(var i = 1; i<= NUM_ROWS*NUM_COLUMNS; ++i){
+          document.getElementById("circle"+i).style.backgroundColor = '';
         }
       }
       }());//IIFE - immediately invoked function expression.
