@@ -58,13 +58,7 @@
             return color2;
           }
       }
-      
-      var color = randomizeStartingTurn("Blue","Yellow");
-      var newGameButton = document.getElementById('newGameButton') ;
-      newGameButton.onclick = newGame;
-       
-     
-      
+            
       (function createBoard(){
         
         var board;
@@ -88,12 +82,19 @@
           }  
         // 5. add the row to the connect for board
           board.appendChild(rowElement);
-        }
-        setCurrentTurnMessage(color + " will start")
+        } 
+        
       }());
       
-      function setCurrentTurnMessage(message){
-        document.getElementById('playColorMessage').innerHTML = message;
+      setStartingMessage(color)
+      
+      
+      function setStartingMessage(turn){
+        document.getElementById('playColorMessage').innerHTML = turn + " will start";
+      }
+      
+      function setCurrentTurnMessage(turn){
+        document.getElementById('playColorMessage').innerHTML = turn + ", it's your turn!";
       }
       
       function switchColors (){        
@@ -113,14 +114,18 @@
       
       function updateView(){
         switchColors();
-        setCurrentTurnMessage(color + ", it's your turn!");
+        setCurrentTurnMessage(color);
       }
       
       function newGame(){
-        for(var i = 1; i<= NUM_ROWS*NUM_COLUMNS; ++i){
-          document.getElementById("circle"+i).style.backgroundColor = '';
-        }
+        setStartingMessage(color)
+        createBoard()
       }
+      
+      var color = randomizeStartingTurn("Blue","Yellow");
+      var newGameButton = document.getElementById('newGameButton') ;
+      newGameButton.onclick = newGame;
+      
       }());//IIFE - immediately invoked function expression.
      
    </script>

@@ -1,0 +1,144 @@
+<!DOCTYPE html> 
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title> Josh Aharonoff | Tic Tac Toe</title>
+   <head profile="http://www.w3.org/2005/10/profile">
+   <link rel="icon" 
+      type="image/png" 
+      href="img/favicon.ico">
+   <link rel="stylesheet" href="css/normalize.css">
+   <link href='http://fonts.googleapis.com/css family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet'>
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/responsive.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--makes sures the desktop layout does not go on mobile devices.this sets the viewport attribute to the content attribute , which scales the window to the size of the device. We set the initial scale at 1.0 so that it shows properly -->
+ </head>
+ <header>
+      <a href="/index" id="logo">
+        <h1> Josh Aharonoff </h1>
+        <h2> </h2>        
+      </a>
+      <nav>
+        <ul>
+          <li> <a href="portfolio"> Portfolio </a> </li>
+          <li> <a href="about"> About </a> </li>
+          <li> <a href="coderbyte.php"> Coderbyte </a> </li> 
+          <li> <a href="contact"> Contact </a> </li>        
+          <li> <a href=""> Blog </a> </li> 
+        </ul> 
+      </nav>
+    </header>
+      
+ 
+     
+
+<body>
+ <div class="tic-tac-toe" id = "tic-tac-toe-board">
+    <h1>Let's Play Some Tic-Tac-Toe!</h1>
+    <div id="message"> Who's turn is it?</div>
+  </div>
+
+
+
+
+
+           <div class="fb-comments" data-href="INSERT LINK HERE" data-width="100%" data-numposts="10"></div>    
+    <footer>
+        <a href="http://www.twitter.com/joshaharonoff"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://www.facebook.com/joshaharonoff"><img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
+        <p> &copy; 2015 Josh Aharonoff.</p>
+    </footer> 
+    <script type="text/javascript">
+        
+        var playerOne;
+        var playerTwo;
+        var turn = randomizeStartTurn ('X','O')
+      
+      
+        function createGame(){
+            
+            var board;
+            var NUM_ROWS = 3;
+            var NUM_COLUMNS = 3;
+            var rowElement;
+            var squareElement;
+            
+            //create tic tac toe board
+            board = document.getElementById('tic-tac-toe-board')
+            
+            // create for loop to create rows based of NUM_ROWS variable with class
+            for(var row = 1; row <= NUM_ROWS; ++row){              
+              
+              // create row element and set a class
+              rowElement = document.createElement('div');
+              rowElement.setAttribute('class', 'tic-tac-toe-row')
+
+              // create an inner for loop to create Squares based of NUM_ROWS*NUM_COLUMNS variable with class and ID
+              for(var col = 1; col <= NUM_COLUMNS; ++col){
+                squareElement = document.createElement('div');
+                squareElement.setAttribute('class','tic-tac-toe-square');
+                squareElement.setAttribute('id', 'square'+((row - 1) * NUM_COLUMNS + col));
+                
+              // set clicking of a box to a function that will show the value  
+                squareElement.onclick = playTurn;
+                                           
+              // Append squareElement to rowElement  
+                rowElement.appendChild(squareElement)                          
+
+              }
+              
+              // Append rowElement to board
+              board.appendChild(rowElement)
+              
+            }
+            function randomizeStartTurn(playerOne, playerTwo){
+              if(Math.random()<.5){
+                return playerOne;
+              } else {
+                return playerTwo;
+              }
+            }
+            setStartingTurn(turn)
+           
+          }
+      createGame()
+      
+      function switchMove(){
+        if(turn === 'X'){
+          turn = 'O'
+        } else{
+          turn = 'X'
+        }
+        setCurrentTurn()
+      }
+      
+      function playTurn(){
+        this.innerHTML = turn;
+        switchMove();
+      }
+      
+      var move = document.getElementsByClassName('tic-tac-toe-square');
+      move.onclick = document.innerHTML(turn);
+       
+       
+       
+      function randomizeStartTurn(playerOne, playerTwo){
+        if(Math.random()<.5){
+          return playerOne;
+        } else{
+          return playerTwo;
+        }
+      }
+      
+      
+      function setStartingTurn(turn){
+        document.getElementById('message').innerHTML = turn + ' will be starting'
+      }
+      
+      function setCurrentTurn(turn){
+        document.getElementById('message').innerHTML = turn + ', it is your turn!'
+      }
+         
+      </script>    
+  </body> 
+</html>      
