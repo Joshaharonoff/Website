@@ -416,15 +416,6 @@ Why Learing To Code Has Changed My Life
             Tic-Tac_Toe
 *********************************/
 
-.tic-tac-toe{
-  max-width:710px;
-  margin:auto auto 2%;
-}
-
-.tic-tac-toe .row{
-  padding-left:35%;
-}
-
 .tic-tac-toe input[type='text']{
   width:15%; 
   height:102px;
@@ -432,9 +423,7 @@ Why Learing To Code Has Changed My Life
   font-size: 75px;
 }
 
-.tic-tac-toe h1{
-  margin: 0 0 8% 15%
-}
+
 
 .tic-tac-toe input[type='button']{
   font-size:40px;
@@ -444,26 +433,54 @@ Why Learing To Code Has Changed My Life
   color:white;
 }
 
+/*
  .tic-tac-toe #table{
   border-style: solid;
   border-color: black;
-  width: 55%;
+  width: 100%;
   height:250px;
   margin: 0 0 7% 23%;
   text-align:center;
   background-color:grey          
  } 
+*/
 
- .tic-tac-toe tr{
-  height:100px;
- }
+ 
 
- .tic-tac-toe td{
-    border:solid;
-    font-size:40px;
-    width:33%;
 
- }
+
+
+
+
+
+
+
+
+/*********************************
+        Tic-Tac-Toe-1
+*********************************/
+
+.tic-tac-toe {
+  max-width:710px;
+  margin:auto auto 2%;
+}
+
+.tic-tac-toe h1 {
+  margin: 0 0 8% 15%
+}
+
+
+.tic-tac-toe td {
+  width:20%;
+  height:90px;
+  border:2px solid black; 
+  display:inline-block;
+  margin-left:1%;
+  background-color:grey;
+  font-size:77px;
+  text-align:center;
+  
+}
 
 .tic-tac-toe #message{
     margin: 0 auto 40px;
@@ -475,58 +492,28 @@ Why Learing To Code Has Changed My Life
     color:rgb(39, 112, 229)
 }
 
-.tic-tac-toe td:hover{
-    background-color:rgba(255, 248, 248, 0.78);
-    cursor:pointer;
-        
-}
-/*
- .tic-tac-toe #message{
-    margin: 0px 0% 5% 40%;
-    border: solid;
-    border-radius: 14px;
-    border-width: 1px;
-    max-width: 22%;
-    height: 38px;
-    padding: 13px 0 0 0;
-    text-align: center;
-    background-color: #4D884D;
-    color: white;
-    font-weight:500;
- }
-*/
-
-/*********************************
-        Tic-Tac-Toe-1
-*********************************/
-.tic-tac-toe-square{
-  width:20%;
-  height:90px;
-  border:2px solid black; 
-  display:inline-block;
-  margin-left:1%;
-  background-color:grey;
-  font-size:40px;
+.tic-tac-toe tr{
   text-align:center;
+  height:105px;
   
-  
-}
-
-.tic-tac-toe-row{
-  height:90%;
 }
 
 .tic-tac-toe-square:hover{
   background-color:white;
 }
 
-.tic-tac-toe-square input[type='text']{
-  font-size:40px;
+
+
+.tic-tac-toe td:hover{
+    background-color:rgba(255, 248, 248, 0.78);
+    cursor:pointer;
+        
 }
 
-.tic-tac-toe-row{
+.tic-tac-toe table{
+  width:100%;
   text-align:center;
-  margin-bottom:
+  margin-bottom: 7%;
 }
 
 

@@ -60,22 +60,26 @@
             var board;
             var NUM_ROWS = 3;
             var NUM_COLUMNS = 3;
+            var tableElement;
             var rowElement;
             var squareElement;
             
-            //create tic tac toe board
+            // create tic tac toe board
             board = document.getElementById('tic-tac-toe-board')
             
+            // create a table
+              tableElement = document.createElement('table')
+              
             // create for loop to create rows based of NUM_ROWS variable with class
             for(var row = 1; row <= NUM_ROWS; ++row){              
               
               // create row element and set a class
-              rowElement = document.createElement('div');
+              rowElement = document.createElement('tr');
               rowElement.setAttribute('class', 'tic-tac-toe-row')
 
               // create an inner for loop to create Squares based of NUM_ROWS*NUM_COLUMNS variable with class and ID
               for(var col = 1; col <= NUM_COLUMNS; ++col){
-                squareElement = document.createElement('div');
+                squareElement = document.createElement('td');
                 squareElement.setAttribute('class','tic-tac-toe-square');
                 squareElement.setAttribute('id', 'square'+((row - 1) * NUM_COLUMNS + col));
                 
@@ -87,20 +91,18 @@
 
               }
               
+              // Append rowElement to tableElement
+                tableElement.appendChild(rowElement)
+              
               // Append rowElement to board
-              board.appendChild(rowElement)
+              board.appendChild(tableElement)
               
             }
-            function randomizeStartTurn(playerOne, playerTwo){
-              if(Math.random()<.5){
-                return playerOne;
-              } else {
-                return playerTwo;
-              }
-            }
+          
             setStartingTurn(turn)
            
           }
+      
       createGame()
       
       function switchMove(){
@@ -109,17 +111,19 @@
         } else{
           turn = 'X'
         }
-        setCurrentTurn()
+        setCurrentTurn(turn);
       }
       
       function playTurn(){
-        this.innerHTML = turn;
-        switchMove();
+        if (this.innerHTML === ''){  
+          this.innerHTML = turn;
+          switchMove();
+          getSquareValue();
+        }
       }
       
-      var move = document.getElementsByClassName('tic-tac-toe-square');
-      move.onclick = document.innerHTML(turn);
-       
+//      var move = document.getElementsByClassName('tic-tac-toe-square');
+////      move.onclick= this.innerHTML;
        
        
       function randomizeStartTurn(playerOne, playerTwo){
@@ -138,6 +142,13 @@
       function setCurrentTurn(turn){
         document.getElementById('message').innerHTML = turn + ', it is your turn!'
       }
+      
+      function getSquareValue(){
+        console.log (this.innerHTML);
+       
+      }
+      
+      
          
       </script>    
   </body> 
