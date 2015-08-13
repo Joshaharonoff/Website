@@ -74,8 +74,8 @@
             for(var row = 1; row <= NUM_ROWS; ++row){              
               
               // create row element and set a class
-              rowElement = document.createElement('tr');
-              rowElement.setAttribute('class', 'tic-tac-toe-row')
+                rowElement = document.createElement('tr');
+                rowElement.setAttribute('class', 'tic-tac-toe-row')
 
               // create an inner for loop to create Squares based of NUM_ROWS*NUM_COLUMNS variable with class and ID
               for(var col = 1; col <= NUM_COLUMNS; ++col){
@@ -84,8 +84,15 @@
                 squareElement.setAttribute('id', 'square'+((row - 1) * NUM_COLUMNS + col));
                 
               // set clicking of a box to a function that will show the value  
+                squareElement.onclick
+                hoverValue(squareElement);
+                
+                
                 squareElement.onclick = playTurn;
-                                           
+                
+              // set hover to a function that will show potential value
+                
+                
               // Append squareElement to rowElement  
                 rowElement.appendChild(squareElement)                          
 
@@ -95,7 +102,7 @@
                 tableElement.appendChild(rowElement)
               
               // Append rowElement to board
-              board.appendChild(tableElement)
+                board.appendChild(tableElement)
               
             }
           
@@ -115,15 +122,15 @@
       }
       
       function playTurn(){
-        if (this.innerHTML === ''){  
+//        if (this.innerHTML === ''){  
           this.innerHTML = turn;
           switchMove();
-          getSquareValue();
-        }
+          getSquareValue(this);
+//        }
       }
       
 //      var move = document.getElementsByClassName('tic-tac-toe-square');
-////      move.onclick= this.innerHTML;
+//     move.onclick= this.innerHTML;
        
        
       function randomizeStartTurn(playerOne, playerTwo){
@@ -143,8 +150,20 @@
         document.getElementById('message').innerHTML = turn + ', it is your turn!'
       }
       
-      function getSquareValue(){
-        console.log (this.innerHTML);
+      function getSquareValue(square){
+        console.log (square.innerHTML);
+       
+      }
+      
+      function hoverValue(square){  
+      
+            square.addEventListener("mouseover",function (event){
+              event.target.innerHTML = 'A';          
+          });       
+        
+          square.addEventListener ("mouseout", function(event){
+            event.target.innerHTML = '5';
+          });
        
       }
       
