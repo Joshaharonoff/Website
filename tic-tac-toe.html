@@ -32,33 +32,174 @@
  
      
 
-<body onload = "play()">
- <div class="tic-tac-toe" >
+<body>
+ <div class="tic-tac-toe" id = "tic-tac-toe-board">
+    <h1>Let's Play Some Tic-Tac-Toe!</h1>
 
-  <h1>Let's Play Some Tic-Tac-Toe!</h1>
-  <div id="message"> Who's turn is it?</div>
+    <input type= "button" value = "New Game" onclick= "createNewGame()">
+   
+    <script type="text/javascript">
+        
+        var movesArray = [];
+        var playerOne;
+        var playerTwo;
+        var turn = randomizeStartTurn ('X','O');
+        var NUM_ROWS = 3;
+        var NUM_COLUMNS = 3;
+      
+        function createGame(){
+            
+            var board;         
+            var tableElement;
+            var rowElement;
+            var squareElement;
+            var newGame;
+            
+            // create tic tac toe board
+            board = document.getElementById('tic-tac-toe-board')
+            
+            // create a table
+              tableElement = document.createElement('table')
+              tableElement.setAttribute('id', 'tic-tac-toe-table');
+              
+            // create for loop to create rows based of NUM_ROWS variable with class
+            for(var row = 1; row <= NUM_ROWS; ++row){              
+              
+              // create row element and set a class
+                rowElement = document.createElement('tr');
+                rowElement.setAttribute('class', 'tic-tac-toe-row')
 
+              // create an inner for loop to create Squares based of NUM_ROWS*NUM_COLUMNS variable with class and ID
+              for(var col = 1; col <= NUM_COLUMNS; ++col){
+                squareElement = document.createElement('td');
+                squareElement.setAttribute('class','tic-tac-toe-square');
+                squareElement.setAttribute('id', 'square'+((row - 1) * NUM_COLUMNS + col));
+                
+              // set clicking of a box to a function that will show the value 
+                           
+                  squareElement.onclick = playTurn;
+                    
+              // set hover to a function that will show potential value
+                onHoverValue(squareElement); 
+                offHoverValue(squareElement);
+                
+              // Append squareElement to rowElement  
+                rowElement.appendChild(squareElement)                          
 
-  <table id = 'table'>
-      <tr>
-       <td id = 'box1' onclick = 'nextMove(this)'></td>
-       <td id = 'box2' onclick = 'nextMove(this)'></td>
-       <td id = 'box3' onclick = 'nextMove(this)'></td>
-      </tr>
-      <tr>
-       <td id = 'box4' onclick = 'nextMove(this)'></td>
-       <td id = 'box5' onclick = 'nextMove(this)'></td>
-       <td id = 'box6' onclick = 'nextMove(this)'></td>
-      </tr>
-      <tr>
-       <td id = 'box7' onclick = 'nextMove(this)'></td>
-       <td id = 'box8' onclick = 'nextMove(this)'></td>
-       <td id = 'box9' onclick = 'nextMove(this)'></td>
-      </tr>
-  </table>  
-  <input type= "button" value = "New Game" onclick= "resetGame()"> 
+              }
+              
+              // Append rowElement to tableElement
+                tableElement.appendChild(rowElement)
+              
+              // Append rowElement to board
+                board.appendChild(tableElement)
+              
+            }
+          
 
-</div>
+                 
+          }
+      
+      createGame()
+      
+      function switchMove(){
+        if(!checkForWinner(turn)){
+            if(turn === 'X'){
+            turn = 'O'
+          } else if (turn === 'O'){
+            turn = 'X'
+          }
+        }
+        
+      }
+      
+      function getIndexFromSquareElement(squareElement){
+        return parseInt(squareElement.id.replace('square','')) -1;
+      }
+      
+      function playTurn(){
+        var index = getIndexFromSquareElement(this);
+        if (!checkForWinner(turn) && !movesArray[index]){
+          movesArray[index] = turn;         
+          this.innerHTML = turn;
+          switchMove();
+          this.onmouseover = null;
+          this.onmouseout = null;
+          
+        }        
+      }
+
+      function randomizeStartTurn(playerOne, playerTwo){
+        if(Math.random()<.5){
+          return playerOne;
+        } else{
+          return playerTwo;
+        }
+      }
+      
+      function onHoverValue(square){  
+            square.onmouseover = function (event){
+                this.innerHTML = turn;
+            };
+      }
+      
+      function offHoverValue(square){
+          square.onmouseout = function(event){
+            this.innerHTML = '';
+          };        
+      }
+      
+       function getSquareValue(number){
+        return movesArray[parseInt(number)-1];
+       
+      }
+      
+      function checkRows(a,b,c,value){
+        var result = false;
+        var winningColor = '#C1CFC1';
+        var cells = [a,b,c];
+        var winnerFound = cells.every(function (square){
+          return getSquareValue(square) === value;
+        })
+        if(winnerFound){
+          result = true
+          for(var i = 0; i < cells.length; i++){
+            document.getElementById('square'+cells[i]).style.backgroundColor = winningColor;
+          }  
+        }  
+        return result
+      }
+      
+      function checkForWinner(value){
+        var result = false;
+        if(checkRows(1,2,3, value) ||
+           checkRows(4,5,6, value) ||
+           checkRows(7,8,9, value) ||
+           checkRows(1,4,7, value) ||
+           checkRows(2,5,8, value) ||
+           checkRows(3,6,9, value) ||
+           checkRows(1,5,9, value) ||
+           checkRows(3,5,7, value)){
+          result = true;
+        }
+        return result;      
+      }
+      
+      function createNewGame(){
+
+        var parent = document.getElementById('tic-tac-toe-board');
+        var child = document.getElementById('tic-tac-toe-table');
+        parent.removeChild(child);
+        for(var i = 0; i < NUM_ROWS*NUM_COLUMNS; i++){
+          movesArray[i] = null;
+        }
+        turn = randomizeStartTurn('X','O');
+        createGame();
+      }     
+         
+      </script>    
+       
+ </div>
 
 
 
@@ -70,99 +211,6 @@
         <a href="http://www.facebook.com/joshaharonoff"><img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
         <p> &copy; 2015 Josh Aharonoff.</p>
     </footer> 
-    <script type="text/javascript">
-          
-          var turn = '';
-          var playerOne = "X";
-          var playerTwo = "O";
-          
-          
-          function play() {
-
-            turn = playerOne;
-            if (Math.random() < .5){
-             turn = playerTwo;
-            }            
-            setMessage ( turn + ' will be starting')
-          }
-
-          function setMessage(msg){
-            document.getElementById("message").innerHTML = msg
-          }
-
-          function nextMove(move){
-             if(checkForWinner(turn)){
-             } else if(move.innerHTML === ''){
-              move.innerHTML = turn
-              switchTurn();
-            }            
-          }
-
-          function switchTurn(){
-            if(checkForWinner(turn)){
-                setMessage("Looks like " +turn + " wins!");                
-            } else if(catsGame()){
-              setMessage ("Cats Game!")
-            } 
-              else{ 
-                if(turn === playerOne){
-                    turn = playerTwo;}
-                else{
-                    turn = playerOne;
-                }
-               setMessage ('Hey '+ turn + ', it\'s your turn!');
-            } 
-          }
-
-          function getBoxValue(number){
-            return document.getElementById("box"+number).innerHTML;
-          }
-
-          function checkRow(a,b,c, value){
-            var result = false;
-            var winningColor = '#C1CFC1';
-            var cells = [a,b,c];
-            var checkCells = cells.every(function (cell){ return getBoxValue(cell)===value});  
-            if(checkCells){
-              result = true;
-              for(var i=0;i<cells.length;i++){
-              document.getElementById("box"+cells[i]).style.backgroundColor = winningColor; 
-              }
-            }
-            return result
-          }
-
-          function checkForWinner(value){
-            var result = false
-            if(checkRow(1,2,3,value) ||
-               checkRow(4,5,6,value) || 
-               checkRow(7,8,9,value) ||
-               checkRow(1,4,7,value) ||
-               checkRow(2,5,8,value) ||
-               checkRow(3,6,9,value) ||
-               checkRow(1,5,9,value) ||
-               checkRow(3,5,7,value)){
-              result = true;
-            }
-            return result
-          }
-
-          function catsGame(){
-            var newArray= [];
-            for(var i=1;i<=9;i++){               
-                  newArray.push(getBoxValue(i))
-              }
-            return newArray.every(function(cell){return cell !== ""});            
-          }
-
-          function resetGame(){
-            for(var i=1;i<=9;i++){
-             document.getElementById("box"+i).innerHTML = '';
-             document.getElementById("box"+i).style.backgroundColor='';
-             play()
-            }
-          }
-          
-      </script>    
+   
   </body> 
 </html>      

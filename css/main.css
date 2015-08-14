@@ -425,7 +425,7 @@ Why Learing To Code Has Changed My Life
 
 
 
-.tic-tac-toe input[type='button']{
+.tic-tac-toe input[type = 'button']{
   font-size:40px;
   margin-left: 35%;
   margin-bottom:10%;
@@ -504,6 +504,7 @@ Why Learing To Code Has Changed My Life
 .tic-tac-toe td:hover{
     background-color:rgba(255, 248, 248, 0.78);
     cursor:pointer;
+    color:brown;
         
 }
 
