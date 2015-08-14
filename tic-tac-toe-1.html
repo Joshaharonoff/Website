@@ -35,31 +35,18 @@
 <body>
  <div class="tic-tac-toe" id = "tic-tac-toe-board">
     <h1>Let's Play Some Tic-Tac-Toe!</h1>
-    <div id="message"> Who's turn is it?</div>
-  </div>
-
-
-
-
-
-           <div class="fb-comments" data-href="INSERT LINK HERE" data-width="100%" data-numposts="10"></div>    
-    <footer>
-        <a href="http://www.twitter.com/joshaharonoff"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
-        <a href="http://www.facebook.com/joshaharonoff"><img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
-        <p> &copy; 2015 Josh Aharonoff.</p>
-    </footer> 
+    <div id= "message" > Who's turn is it?</div>
     <script type="text/javascript">
         
         var playerOne;
         var playerTwo;
-        var turn = randomizeStartTurn ('X','O')
-      
+        var turn = randomizeStartTurn ('X','O');
+        var NUM_ROWS = 3;
+        var NUM_COLUMNS = 3;
       
         function createGame(){
             
-            var board;
-            var NUM_ROWS = 3;
-            var NUM_COLUMNS = 3;
+            var board;         
             var tableElement;
             var rowElement;
             var squareElement;
@@ -83,15 +70,14 @@
                 squareElement.setAttribute('class','tic-tac-toe-square');
                 squareElement.setAttribute('id', 'square'+((row - 1) * NUM_COLUMNS + col));
                 
-              // set clicking of a box to a function that will show the value  
-                squareElement.onclick
-                hoverValue(squareElement);
-                
-                
-                squareElement.onclick = playTurn;
-                
+              // set clicking of a box to a function that will show the value 
+                            
+                  squareElement.onclick = playTurn;
+                      
+                    
               // set hover to a function that will show potential value
-                
+//                onHoverValue(squareElement); 
+//                offHoverValue(squareElement);
                 
               // Append squareElement to rowElement  
                 rowElement.appendChild(squareElement)                          
@@ -113,20 +99,27 @@
       createGame()
       
       function switchMove(){
-        if(turn === 'X'){
+        if(checkForWinner(turn)){
+          setWinningMessage(turn);
+        } else if(turn === 'X'){
           turn = 'O'
+          setCurrentTurn(turn);
         } else{
           turn = 'X'
+          setCurrentTurn(turn);
         }
-        setCurrentTurn(turn);
+        
       }
       
       function playTurn(){
-//        if (this.innerHTML === ''){  
+        if (checkForWinner(turn)){
+          
+        } else if (this.innerHTML === ''){  
           this.innerHTML = turn;
           switchMove();
           getSquareValue(this);
-//        }
+        }
+        
       }
       
 //      var move = document.getElementsByClassName('tic-tac-toe-square');
@@ -150,25 +143,83 @@
         document.getElementById('message').innerHTML = turn + ', it is your turn!'
       }
       
-      function getSquareValue(square){
-        console.log (square.innerHTML);
+      function setWinningMessage(turn){
+        document.getElementById('message').innerHTML = 'Looks like ' + turn + ' won!'
+      }
+      
+      function getSquareValue(number){
+        return document.getElementById("square"+number).innerHTML;
        
       }
       
-      function hoverValue(square){  
+//      function onHoverValue(square){  
+//      
+//            square.addEventListener("mouseover",function (event){
+//              event.target.style.backgroundColor = 'white';          
+//          });
+//      }
+//      
+//      function offHoverValue(square){
+//          square.addEventListener ("mouseout", function(event){
+//            event.target.style.backgroundColor = 'grey';
+//          });        
+//      }
       
-            square.addEventListener("mouseover",function (event){
-              event.target.innerHTML = 'A';          
-          });       
+      function checkRows(a,b,c,value){
+        var result = false;
+        var winningColor = '#C1CFC1';
+        var cells = [a,b,c];
+        var winnerFound = cells.every(function (square){
+          return getSquareValue(square) === value;
+        })
+        if(winnerFound){
+          result = true
+          for(var i = 0; i <= cells.length; i++){
+            document.getElementById('square'+cells[i]).style.backgroundColor = winningColor;
+          }  
+        }  
+        return result
+      }
+      
+      function checkForWinner(value){
+        var result = false;
+        if(checkRows(1,2,3, value) ||
+           checkRows(4,5,6, value) ||
+           checkRows(7,8,9, value) ||
+           checkRows(1,4,7, value) ||
+           checkRows(2,5,8, value) ||
+           checkRows(3,6,9, value) ||
+           checkRows(1,5,9, value) ||
+           checkRows(3,5,7, value)){
+          result = true;
+        }
+        return result;      
+      }
+      
+      function newGame(){
+        for(var i = 1; i <= NUM_ROWS * NUM_COLUMNS; ++i){
+          document.getElementById('square'+i).innerHTML = '';
+          document.getElementById('square'+i).style.backgroundColor = grey;
+        }
+        setStartingTurn();
         
-          square.addEventListener ("mouseout", function(event){
-            event.target.innerHTML = '5';
-          });
-       
       }
-      
-      
+            
          
       </script>    
+    <input type= "button" value = "New Game" onclick= "newGame()">
+ </div>
+
+
+
+
+
+           <div class="fb-comments" data-href="INSERT LINK HERE" data-width="100%" data-numposts="10"></div>    
+    <footer>
+        <a href="http://www.twitter.com/joshaharonoff"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="http://www.facebook.com/joshaharonoff"><img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>     
+        <p> &copy; 2015 Josh Aharonoff.</p>
+    </footer> 
+   
   </body> 
 </html>      
