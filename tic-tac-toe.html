@@ -76,13 +76,13 @@
                 squareElement.setAttribute('id', 'square'+((row - 1) * NUM_COLUMNS + col));
                 
               // set clicking of a box to a function that will show the value 
-                           
-                  squareElement.onclick = playTurn;
-                    
+                       
+                squareElement.onclick = playTurn;
+               
               // set hover to a function that will show potential value
                 onHoverValue(squareElement); 
                 offHoverValue(squareElement);
-                
+               
               // Append squareElement to rowElement  
                 rowElement.appendChild(squareElement)                          
 
@@ -91,19 +91,31 @@
               // Append rowElement to tableElement
                 tableElement.appendChild(rowElement)
               
-              // Append rowElement to board
+              // Append tableElement to board
                 board.appendChild(tableElement)
               
             }
+          };
+      createGame();
+    
+      function playTurn(){
+        
+        var index = getIndexFromSquareElement(this);
+        if (!checkForWinner(turn) && !movesArray[index]){
+          movesArray[index] = turn;         
+          this.innerHTML = turn;
+          switchMove();
+          this.onmouseover = null;
+          this.onmouseout = null;
           
-
-                 
-          }
-      
-      createGame()
+        }        
+      }
       
       function switchMove(){
-        if(!checkForWinner(turn)){
+        if(checkForWinner(turn)){
+           alert('Looks like ' + turn + ' wins!')  
+            turn = null;
+           } else {
             if(turn === 'X'){
             turn = 'O'
           } else if (turn === 'O'){
@@ -115,18 +127,6 @@
       
       function getIndexFromSquareElement(squareElement){
         return parseInt(squareElement.id.replace('square','')) -1;
-      }
-      
-      function playTurn(){
-        var index = getIndexFromSquareElement(this);
-        if (!checkForWinner(turn) && !movesArray[index]){
-          movesArray[index] = turn;         
-          this.innerHTML = turn;
-          switchMove();
-          this.onmouseover = null;
-          this.onmouseout = null;
-          
-        }        
       }
 
       function randomizeStartTurn(playerOne, playerTwo){
@@ -161,7 +161,7 @@
         var winnerFound = cells.every(function (square){
           return getSquareValue(square) === value;
         })
-        if(winnerFound){
+        if((winnerFound)&& turn !== null){
           result = true
           for(var i = 0; i < cells.length; i++){
             document.getElementById('square'+cells[i]).style.backgroundColor = winningColor;
@@ -195,6 +195,7 @@
         }
         turn = randomizeStartTurn('X','O');
         createGame();
+        
       }     
          
       </script>    
