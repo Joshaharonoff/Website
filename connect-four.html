@@ -34,7 +34,7 @@
       <div class='connect-four' id = 'connect-four-board'>  
         <h3> Let's Play Some Connect Four!</h3>
         <div id = 'playColorMessage'>
-          <h4>Choose a color!</h4>
+<!--          <h4>Choose a color!</h4>-->
         </div>
         
       </div>
@@ -46,10 +46,11 @@
    
     <script type='text/javascript'>
         
-    (function (){   
+  
       var NUM_ROWS = 6;
       var NUM_COLUMNS = 7;
       var numOfPlayers = 2;
+      
       
      function randomizeStartingTurn(color1,color2){
           if(Math.random() <.5){
@@ -58,8 +59,19 @@
             return color2;
           }
       }
-            
-      (function createBoard(){
+      
+      function convertCircleId(circle){
+        return parseInt(circle.id.replace(/'circle',''/g))
+      }
+      
+      function checkCircleForTurn(circle){
+        if(circle.style.backgroundColor = ''){
+          
+        }
+      }
+      
+      
+      function createBoard(){
         
         var board;
         var rowElement;
@@ -76,7 +88,9 @@
             circleElement = document.createElement("div")
             circleElement.setAttribute ("class", "connect-four-circle")
             circleElement.setAttribute ("id", "circle" + ((row - 1) *NUM_COLUMNS + col));
-            circleElement.onclick = playTurn;    
+            circleElement.onclick = playTurn; 
+            onHoverValue(circleElement);
+            offHoverValue(circleElement);
         // 4. add the cell to the current row            
             rowElement.appendChild(circleElement);            
           }  
@@ -84,18 +98,20 @@
           board.appendChild(rowElement);
         } 
         
-      }());
-      
-      setStartingMessage(color)
-      
-      
-      function setStartingMessage(turn){
-        document.getElementById('playColorMessage').innerHTML = turn + " will start";
       }
       
-      function setCurrentTurnMessage(turn){
-        document.getElementById('playColorMessage').innerHTML = turn + ", it's your turn!";
-      }
+      createBoard();
+      
+//      setStartingMessage(color)
+//      
+//      
+//      function setStartingMessage(turn){
+//        document.getElementById('playColorMessage').innerHTML = turn + " will start";
+//      }
+//      
+//      function setCurrentTurnMessage(turn){
+//        document.getElementById('playColorMessage').innerHTML = turn + ", it's your turn!";
+//      }
       
       function switchColors (){        
         if(color === "Blue"){
@@ -114,11 +130,24 @@
       
       function updateView(){
         switchColors();
-        setCurrentTurnMessage(color);
+//        setCurrentTurnMessage(color);
+      }
+      
+      function onHoverValue(circle){
+        circle.onmouseover = function(event){
+          this.style.backgroundColor = color;
+        }
+        
+      }
+      
+      function offHoverValue(circle){
+        circle.onmouseout = function(event){
+          this.style.backgroundColor = '';
+        }
       }
       
       function newGame(){
-        setStartingMessage(color)
+//        setStartingMessage(color)
         createBoard()
       }
       
@@ -126,7 +155,9 @@
       var newGameButton = document.getElementById('newGameButton') ;
       newGameButton.onclick = newGame;
       
-      }());//IIFE - immediately invoked function expression.
+      
+      
+      
      
    </script>
     <footer>
