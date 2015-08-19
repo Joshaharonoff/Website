@@ -50,26 +50,7 @@
       var NUM_ROWS = 6;
       var NUM_COLUMNS = 7;
       var numOfPlayers = 2;
-      
-      
-     function randomizeStartingTurn(color1,color2){
-          if(Math.random() <.5){
-            return color1;
-          } else {
-            return color2;
-          }
-      }
-      
-      function convertCircleId(circle){
-        return parseInt(circle.id.replace(/'circle',''/g))
-      }
-      
-      function checkCircleForTurn(circle){
-        if(circle.style.backgroundColor = ''){
-          
-        }
-      }
-      
+      var movesArray = [];
       
       function createBoard(){
         
@@ -78,66 +59,88 @@
         var circleElement;
         
         // 1. get the connect four board
-        board = document.getElementById('connect-four-board');  
+        board = document.getElementById('connect-four-board');
+        
         // 2. create a row
         for (var row = 1; row <=NUM_ROWS; ++row){
           rowElement = document.createElement ("div")
           rowElement.setAttribute("class", "connect-four-row")
+          
         // 3. create a column
           for (var col = 1; col <=NUM_COLUMNS; ++col){
             circleElement = document.createElement("div")
             circleElement.setAttribute ("class", "connect-four-circle")
             circleElement.setAttribute ("id", "circle" + ((row - 1) *NUM_COLUMNS + col));
+            
+        // 4. set a click value, hover value, and off hover value    
             circleElement.onclick = playTurn; 
             onHoverValue(circleElement);
             offHoverValue(circleElement);
-        // 4. add the cell to the current row            
+        
+        // 5. add the cell to the current row            
             rowElement.appendChild(circleElement);            
           }  
-        // 5. add the row to the connect for board
+          
+        // 6. add the row to the connect for board
           board.appendChild(rowElement);
         } 
-        
       }
       
       createBoard();
       
-//      setStartingMessage(color)
-//      
-//      
-//      function setStartingMessage(turn){
-//        document.getElementById('playColorMessage').innerHTML = turn + " will start";
-//      }
-//      
-//      function setCurrentTurnMessage(turn){
-//        document.getElementById('playColorMessage').innerHTML = turn + ", it's your turn!";
-//      }
+            
       
-      function switchColors (){        
-        if(color === "Blue"){
-           color = "Yellow"
-        } else {
-        color = "Blue"
-        }
-       
-        return color;        
+     function randomizeStartingTurn(turn1,turn2){
+          if(Math.random() <.5){
+            return turn1;
+          } else {
+            return turn2;
+          }
       }
       
-      function playTurn(){      
-        this.style.backgroundColor = color;
-        updateView();
-      } 
+
+      
+      function switchTurn (){        
+        if(turn === "Blue"){
+          turn = "Yellow"
+        } else {
+          turn = "Blue"
+        }
+        return turn;        
+      }
+      
+      function playTurn(){
+        var index = getCircleIndex(this);
+        if(!movesArray[index]){
+          movesArray[index] = turn;
+          switchTurn();
+          this.onmouseover = null;
+          this.onmouseout = null;
+        }
+      }
+      
+      function getCircleIndex(circle){
+        return parseInt(circle.id.replace('circle','') -1 )
+      }
+      
+      function checkOpenCircle(index){
+        if(movesArray[index+NUM_COLUMNS]){
+          movesArray[index] = turn;
+          return index;
+        } else{
+          return checkOpenCircle(index+NUM_ROWS)
+        }
+      }
       
       function updateView(){
-        switchColors();
+        switchTurn();
 //        setCurrentTurnMessage(color);
       }
       
       function onHoverValue(circle){
-        circle.onmouseover = function(event){
-          this.style.backgroundColor = color;
-        }
-        
+         circle.onmouseover = function(event){
+          this.style.backgroundColor = turn;
+        }     
       }
       
       function offHoverValue(circle){
@@ -151,7 +154,7 @@
         createBoard()
       }
       
-      var color = randomizeStartingTurn("Blue","Yellow");
+      var turn = randomizeStartingTurn("Blue","Yellow");
       var newGameButton = document.getElementById('newGameButton') ;
       newGameButton.onclick = newGame;
       
