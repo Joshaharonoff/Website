@@ -46,11 +46,13 @@
    
     <script type='text/javascript'>
         
-  
+  // objectives for 10.8.2015:Set a new hover value, analyze scaling blue/yellow
       var NUM_ROWS = 6;
       var NUM_COLUMNS = 7;
       var numOfPlayers = 2;
       var movesArray = [];
+      var player1 = "blue";
+      var player2 = "yellow";
       
       function createBoard(){
         
@@ -73,9 +75,10 @@
             circleElement.setAttribute ("id", "circle" + ((row - 1) *NUM_COLUMNS + col));
             
         // 4. set a click value, hover value, and off hover value    
+            // ** Is this the only / best way to set a click handler?
             circleElement.onclick = playTurn; 
-            onHoverValue(circleElement);
-            offHoverValue(circleElement);
+//            onHoverValue(circleElement);
+//            offHoverValue(circleElement);
         
         // 5. add the cell to the current row            
             rowElement.appendChild(circleElement);            
@@ -101,42 +104,77 @@
 
       
       function switchTurn (){        
-        if(turn === "Blue"){
-          turn = "Yellow"
+        if(turn === player1){
+          turn = player2
         } else {
-          turn = "Blue"
-        }
-        return turn;        
+          turn = player1
+        } 
+          return turn;        
       }
       
       function playTurn(){
-        var index = getCircleIndex(this);
+        // ** I remember you mentioned it's not a good idea to always define index like this...howcome? What's the alternative?
+        var index = firstOpenIndexInColumn(getColumnOfCircle(this)); 
         if(!movesArray[index]){
           movesArray[index] = turn;
+          updateUI();
           switchTurn();
-          this.onmouseover = null;
-          this.onmouseout = null;
+//          this.onmouseover = null;
+//          this.onmouseout = null;
+        }
+          
+      }
+      
+      function updateUI(){
+        for(var circleIndex = 0; circleIndex < (NUM_COLUMNS*NUM_ROWS); ++circleIndex){
+          var circle = document.getElementById("circle"+(circleIndex+1));
+          circle.style.backgroundColor = movesArray[circleIndex];
         }
       }
       
       function getCircleIndex(circle){
-        return parseInt(circle.id.replace('circle','') -1 )
+        return parseInt(circle.id.replace('circle','') -1 );
       }
       
-      function checkOpenCircle(index){
-        if(movesArray[index+NUM_COLUMNS]){
-          movesArray[index] = turn;
-          return index;
+      function getRowOfCircle(circle){
+        // ** Is 'this' an error?
+        var circleId = getCircleIndex(this);
+        return (Math.floor(circleId/NUM_COLUMNS)+1);
+      }
+        
+      function getColumnOfCircle(circle){
+        var circle = getCircleIndex(circle);
+        if (((circle+1) % NUM_COLUMNS) === 0){
+          return (NUM_COLUMNS);
         } else{
-          return checkOpenCircle(index+NUM_ROWS)
+          return ((circle+1) % NUM_COLUMNS);
         }
+      }        
+
+      function getColumnAndRowOfCircle(circle){
+        return [getColumnOfCircle(circle), getRowOfCircle(circle)];
       }
       
-      function updateView(){
-        switchTurn();
-//        setCurrentTurnMessage(color);
+      function getIndexFromColumnAndRow(column,row){
+        return (((row-1)*NUM_COLUMNS+column)-1);
+      } 
+        
+      function isFirstRowOpen(circle){
+//        var index = getCircleIndex(circle);        
+        return !movesArray[getIndexFromColumnAndRow(getColumnOfCircle(circle),NUM_ROWS)];
+        
       }
       
+      function firstOpenIndexInColumn(column){
+        for(var row = NUM_ROWS; row >= 1; row--){
+          var firstOpenIndex = getIndexFromColumnAndRow(column,row)
+          if(!movesArray[firstOpenIndex]){
+            return firstOpenIndex;
+          } 
+        } 
+        return -1
+      }    
+        
       function onHoverValue(circle){
          circle.onmouseover = function(event){
           this.style.backgroundColor = turn;
@@ -150,14 +188,30 @@
       }
       
       function newGame(){
-//        setStartingMessage(color)
+          var circles = document.getElementsByClassName('connect-four-circle')
+          while (circles[0]){
+            circles[0].parentNode.removeChild(circles[0]);
+          }
         createBoard()
+        movesArray = []
       }
-      
-      var turn = randomizeStartingTurn("Blue","Yellow");
+
+      var turn = randomizeStartingTurn(player1,player2);
       var newGameButton = document.getElementById('newGameButton') ;
       newGameButton.onclick = newGame;
-      
+         
+//Create 5 functions:
+//
+//Index from RowColumn(row,col)
+//
+//rowfromindex(index)
+//
+//columnFromIndex(index)
+//
+//rowColumnFromIndex(index)
+//  return [rowFromIndex(index), columnFromIndex(index)]
+//nextOpenCircle(col, movesArray)
+//      
       
       
       

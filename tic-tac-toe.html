@@ -139,13 +139,13 @@
       }
       
       function onHoverValue(square){  
-          square.onmouseover = function (event){
+          square.onmouseover = function (){
               this.innerHTML = turn;
           };
       }
       
       function offHoverValue(square){
-          square.onmouseout = function(event){
+          square.onmouseout = function(){
             this.innerHTML = '';
           };        
       }
